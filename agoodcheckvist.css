@@ -860,12 +860,6 @@ li.task .coreDiv .act {
   display: inline;
 }
 
-/* 5. Extra spacing mellan tasks för luftigare design */
-.coreDiv {
-  margin-bottom: 10px;
-  padding: 3px 0;
-}
-
 /* === Slut === */
 
 
