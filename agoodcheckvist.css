@@ -819,8 +819,14 @@ a.sharreLink:hover {
   border-color: #999 !important;
 }
 
-/* Öppen todo – röd ruta */
+/* Dölj inbyggd checkbox */
 .coreDiv.tag_todo > .checkMark {
+  display: none !important;
+}
+
+/* Visa röd ruta för öppna todos */
+.coreDiv.tag_todo::before {
+  content: "";
   display: inline-block;
   width: 16px;
   height: 16px;
@@ -831,24 +837,24 @@ a.sharreLink:hover {
   background: white;
 }
 
-/* Avslutad todo – grön ruta med bock */
-.coreDiv.tag_todo.task_closed > .checkMark {
-  background: #2ecc71;
-  border-color: #2ecc71;
-  position: relative;
-}
-.coreDiv.tag_todo.task_closed > .checkMark::after {
+/* Visa grön ruta med vit bock för avklarade todos */
+.coreDiv.tag_todo.task_closed::before {
   content: "✓";
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border: 2px solid #2ecc71;
+  border-radius: 2px;
+  margin-right: 6px;
+  vertical-align: middle;
+  background-color: #2ecc71;
   color: white;
-  font-size: 12px;
-  font-weight: bold;
-  position: absolute;
-  top: -1px;
-  left: 2px;
+  font-size: 13px;
+  text-align: center;
+  line-height: 14px;
 }
 
-/* Döljer #todo-taggen om du inte vill visa den i texten */
+/* Dölj #todo-taggen i texten */
 .coreDiv.tag_todo .tag_todo {
   display: none;
 }
-
