@@ -819,8 +819,10 @@ a.sharreLink:hover {
   border-color: #999 !important;
 }
 
-/* Klickbar och snygg checkbox för subtasks */
-.task.leafItem .checkMark {
+/* === AGoodCheckvist Checkbox System v1.1 === */
+
+/* Endast för riktiga subtasks (leafItem) med riktig klickbar checkbox */
+li.task.leafItem .checkMark {
   font-size: 1.3em;
   color: #007acc;
   margin-right: 8px;
@@ -829,8 +831,8 @@ a.sharreLink:hover {
   top: 2px;
 }
 
-/* Visuell checkbox för parent tasks (ej klickbar) */
-.task.withActionMenu:not(.leafItem) .taskContent::before {
+/* För parent tasks: visa en visuell (ej klickbar) checkbox */
+li.task.withActionMenu:not(.leafItem) .taskContent::before {
   content: "☐";
   margin-right: 8px;
   font-size: 1.3em;
@@ -840,7 +842,7 @@ a.sharreLink:hover {
   top: 2px;
 }
 
-/* Enhetlig task-utseende */
+/* Enhetlig och snygg text för alla tasks */
 .taskContent p {
   font-size: 1.05em;
   font-weight: 500;
@@ -850,20 +852,17 @@ a.sharreLink:hover {
   display: inline;
 }
 
-/* --- Remove duplicate icons on focus --- */
+/* Spacing mellan tasks */
+.coreDiv {
+  margin-bottom: 10px;
+  padding: 3px 0;
+}
 
-.selectedTask_focus .coreDiv .icon-circle,
-.selectedTask_focus .coreDiv .checkMark + .icon-circle,
-.selectedTask_focus .coreDiv .checkMark ~ .icon-circle {
+/* Rensa bort duplicerade/fokusbaserade checkbox-ikoner */
+li.task .checkMark + .icon-circle,
+li.task .checkMark ~ .icon-circle,
+li.task .selectedTask_focus .icon-circle,
+li.task .coreDiv .act {
   display: none !important;
 }
 
-.checkMark + .icon-circle,
-.checkMark ~ .icon-circle {
-  display: none !important;
-}
-
-/* Döljer trepunktsmenyn vid fokus (renare vy) */
-.selectedTask_focus .coreDiv .act {
-  display: none !important;
-}
