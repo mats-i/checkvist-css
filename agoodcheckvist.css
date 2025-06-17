@@ -819,43 +819,21 @@ a.sharreLink:hover {
   border-color: #999 !important;
 }
 
-/* ======================================================= */
-/* === CSS FÖR ATT GÖRA BARA "TODO"-NODER TYDLIGARE === */
-/* ======================================================= */
+/* ================================================== */
+/* === MINIMALISTISK CSS FÖR ATT FÖRTYDLIGA TODOS === */
+/* ================================================== */
 
-/* 1. Gör texten i uppgifter (men inte vanliga noder) aningen större och fetare. */
-.task .node_content {
-    font-size: 1.05em !important;  /* En subtil förstoring */
+/* Denna regel appliceras bara på texten (taskContent) 
+  i noder som har en kryssruta (klassen .task).
+*/
+.task .taskContent {
+  font-weight: 500 !important; /* Gör texten halvfet (tydligare än normal, mjukare än fet) */
+  color: #e0e0e0 !important;   /* En aning ljusare textfärg för att sticka ut lite (om du använder mörkt tema) */
+}
+
+/* Gör även texten i slutförda uppgifter lite tydligare, 
+   men låt Checkvists överstrykning och nedtoning vara kvar. 
+*/
+.task.completed .taskContent {
     font-weight: 500 !important;
-}
-
-/* 2. Ge varje uppgift en egen "box" med mer luft och en skiljelinje. */
-.task {
-    background-color: rgba(80, 80, 80, 0.15) !important; /* Mycket svag bakgrundsfärg för att skapa en "box" */
-    padding: 8px 5px 10px 5px !important;
-    margin-bottom: 10px !important;
-    border-left: 3px solid #666 !important; /* En grå vänsterkant för att markera att det är en uppgift */
-    border-radius: 4px;
-}
-
-/* 3. Ta bort den undre linjen för den sista uppgiften i en grupp för snyggare avslut. */
-.task:last-child {
-    border-bottom: none !important;
-}
-
-/* 4. Tydligare markering när just en UPPGIFT är vald. */
-.task.focused.selected {
-    background-color: rgba(138, 180, 248, 0.15) !important;
-    border-left: 3px solid #8ab4f8 !important;
-}
-
-/* 5. Tona ner slutförda uppgifter. */
-.task.completed {
-    opacity: 0.5 !important;
-    background-color: transparent !important; /* Ta bort box-känslan när den är klar */
-    border-left: 3px solid #5cb85c !important; /* Grön kant för slutförd */
-}
-
-.task.completed .node_content {
-    text-decoration: line-through !important;
 }
