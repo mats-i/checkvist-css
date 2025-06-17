@@ -819,9 +819,9 @@ a.sharreLink:hover {
   border-color: #999 !important;
 }
 
-/* === AGoodCheckvist Checkbox System v1.1 === */
+/* === AGoodCheckvist Checkbox System v1.3 === */
 
-/* Endast för riktiga subtasks (leafItem) med riktig klickbar checkbox */
+/* 1. Klickbara checkboxar för riktiga tasks */
 li.task.leafItem .checkMark {
   font-size: 1.3em;
   color: #007acc;
@@ -831,8 +831,8 @@ li.task.leafItem .checkMark {
   top: 2px;
 }
 
-/* För parent tasks: visa en visuell (ej klickbar) checkbox */
-li.task.withActionMenu:not(.leafItem) .taskContent::before {
+/* 2. Visa pseudo-checkbox för parent tasks UTAN checkMark (även om markerade) */
+li.task.withActionMenu.boxesList:not(.leafItem):not(:has(.checkMark)) .taskContent::before {
   content: "☐";
   margin-right: 8px;
   font-size: 1.3em;
@@ -842,7 +842,15 @@ li.task.withActionMenu:not(.leafItem) .taskContent::before {
   top: 2px;
 }
 
-/* Enhetlig och snygg text för alla tasks */
+/* 3. Döljer dubbletter eller visuella artefakter från markerade rader */
+li.task .checkMark + .icon-circle,
+li.task .checkMark ~ .icon-circle,
+li.task .selectedTask_focus .icon-circle,
+li.task .coreDiv .act {
+  display: none !important;
+}
+
+/* 4. Stil för tasktexten */
 .taskContent p {
   font-size: 1.05em;
   font-weight: 500;
@@ -852,17 +860,12 @@ li.task.withActionMenu:not(.leafItem) .taskContent::before {
   display: inline;
 }
 
-/* Spacing mellan tasks */
+/* 5. Extra spacing mellan tasks för luftigare design */
 .coreDiv {
   margin-bottom: 10px;
   padding: 3px 0;
 }
 
-/* Rensa bort duplicerade/fokusbaserade checkbox-ikoner */
-li.task .checkMark + .icon-circle,
-li.task .checkMark ~ .icon-circle,
-li.task .selectedTask_focus .icon-circle,
-li.task .coreDiv .act {
-  display: none !important;
-}
+/* === Slut === */
+
 
