@@ -850,8 +850,20 @@ a.sharreLink:hover {
   display: inline;
 }
 
-/* Spacing */
-.coreDiv {
-  margin-bottom: 10px;
-  padding: 3px 0;
+/* --- Remove duplicate icons on focus --- */
+
+.selectedTask_focus .coreDiv .icon-circle,
+.selectedTask_focus .coreDiv .checkMark + .icon-circle,
+.selectedTask_focus .coreDiv .checkMark ~ .icon-circle {
+  display: none !important;
+}
+
+.checkMark + .icon-circle,
+.checkMark ~ .icon-circle {
+  display: none !important;
+}
+
+/* Döljer trepunktsmenyn vid fokus (renare vy) */
+.selectedTask_focus .coreDiv .act {
+  display: none !important;
 }
