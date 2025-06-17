@@ -819,47 +819,36 @@ a.sharreLink:hover {
   border-color: #999 !important;
 }
 
-/* === AGoodCheckvist Checkbox System v1.3 === */
-
-/* 1. Klickbara checkboxar för riktiga tasks */
-li.task.leafItem .checkMark {
-  font-size: 1.3em;
-  color: #007acc;
-  margin-right: 8px;
+/* Öppen todo – röd ruta */
+.coreDiv.tag_todo > .checkMark {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border: 2px solid #E00;
+  border-radius: 2px;
+  margin-right: 6px;
   vertical-align: middle;
+  background: white;
+}
+
+/* Avslutad todo – grön ruta med bock */
+.coreDiv.tag_todo.task_closed > .checkMark {
+  background: #2ecc71;
+  border-color: #2ecc71;
   position: relative;
-  top: 2px;
+}
+.coreDiv.tag_todo.task_closed > .checkMark::after {
+  content: "✓";
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+  position: absolute;
+  top: -1px;
+  left: 2px;
 }
 
-/* 2. Visa pseudo-checkbox för parent tasks UTAN checkMark (även om markerade) */
-li.task.withActionMenu.boxesList:not(.leafItem):not(:has(.checkMark)) .taskContent::before {
-  content: "☐";
-  margin-right: 8px;
-  font-size: 1.3em;
-  color: #007acc;
-  vertical-align: middle;
-  position: relative;
-  top: 2px;
+/* Döljer #todo-taggen om du inte vill visa den i texten */
+.coreDiv.tag_todo .tag_todo {
+  display: none;
 }
-
-/* 3. Döljer dubbletter eller visuella artefakter från markerade rader */
-li.task .checkMark + .icon-circle,
-li.task .checkMark ~ .icon-circle,
-li.task .selectedTask_focus .icon-circle,
-li.task .coreDiv .act {
-  display: none !important;
-}
-
-/* 4. Stil för tasktexten */
-.taskContent p {
-  font-size: 1.05em;
-  font-weight: 500;
-  color: #222;
-  margin: 0;
-  padding: 2px 0;
-  display: inline;
-}
-
-/* === Slut === */
-
 
