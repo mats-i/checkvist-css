@@ -820,26 +820,29 @@ a.sharreLink:hover {
 }
 
 
-/* task format */
+/* --- Task Checkbox Fix --- */
 
-/* För leaf items (tasks som har native checkbox) */
+/* Justera native checkbox för leaf items */
 .task.leafItem .checkMark {
   font-size: 1.3em;
   color: #007acc;
   margin-right: 8px;
   vertical-align: middle;
+  position: relative;
+  top: 2px;
 }
 
-/* För parent tasks: sätt pseudo-checkbox bara på tasks med withActionMenu, som inte är leafItem */
+/* Lägg till pseudo-checkbox för parent tasks */
 .task.withActionMenu:not(.leafItem) .taskContent::before {
   content: "☐ ";
   margin-right: 8px;
   font-size: 1.3em;
   color: #007acc;
-  vertical-align: middle;
+  position: relative;
+  top: 2px;
 }
 
-/* Polering av själva tasktexten */
+/* Polera task-texten */
 .taskContent p {
   font-size: 1.05em;
   font-weight: 500;
@@ -852,7 +855,7 @@ a.sharreLink:hover {
 /* Spacing mellan tasks */
 .coreDiv {
   margin-bottom: 10px;
-  padding: 2px 0;
+  padding: 3px 0;
 }
 
 
