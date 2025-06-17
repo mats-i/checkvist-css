@@ -819,33 +819,3 @@ a.sharreLink:hover {
   border-color: #999 !important;
 }
 
-/* Dölj inbyggd checkbox */
-.coreDiv.tag_todo .checkMark {
-  display: none !important;
-}
-
-/* Egen checkbox: röd ruta för öppna todos */
-.coreDiv.tag_todo::before {
-  content: "◻";
-  color: red;
-  font-weight: bold;
-  margin-right: 8px;
-  display: inline-block;
-}
-
-/* Grön bock för avklarade todos */
-.coreDiv.tag_todo.task_closed::before {
-  content: "✔";
-  color: green;
-}
-
-/* Valfritt: ljusgrön bakgrund för klara uppgifter */
-.coreDiv.tag_todo.task_closed {
-  background-color: #e9f9ec !important;
-}
-
-/* Undvik extra effekter vid markering */
-.coreDiv.tag_todo.selectedTask::before {
-  box-shadow: none !important;
-  background: none !important;
-}
