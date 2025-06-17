@@ -820,41 +820,32 @@ a.sharreLink:hover {
 }
 
 /* Dölj inbyggd checkbox */
-.coreDiv.tag_todo > .checkMark {
+.coreDiv.tag_todo .checkMark {
   display: none !important;
 }
 
-/* Visa röd ruta för öppna todos */
+/* Egen checkbox: röd ruta för öppna todos */
 .coreDiv.tag_todo::before {
-  content: "";
+  content: "◻";
+  color: red;
+  font-weight: bold;
+  margin-right: 8px;
   display: inline-block;
-  width: 16px;
-  height: 16px;
-  border: 2px solid #E00;
-  border-radius: 2px;
-  margin-right: 6px;
-  vertical-align: middle;
-  background: white;
 }
 
-/* Visa grön ruta med vit bock för avklarade todos */
+/* Grön bock för avklarade todos */
 .coreDiv.tag_todo.task_closed::before {
-  content: "✓";
-  display: inline-block;
-  width: 16px;
-  height: 16px;
-  border: 2px solid #2ecc71;
-  border-radius: 2px;
-  margin-right: 6px;
-  vertical-align: middle;
-  background-color: #2ecc71;
-  color: white;
-  font-size: 13px;
-  text-align: center;
-  line-height: 14px;
+  content: "✔";
+  color: green;
 }
 
-/* Dölj #todo-taggen i texten */
-.coreDiv.tag_todo .tag_todo {
-  display: none;
+/* Valfritt: ljusgrön bakgrund för klara uppgifter */
+.coreDiv.tag_todo.task_closed {
+  background-color: #e9f9ec !important;
+}
+
+/* Undvik extra effekter vid markering */
+.coreDiv.tag_todo.selectedTask::before {
+  box-shadow: none !important;
+  background: none !important;
 }
