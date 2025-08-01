@@ -1,296 +1,837 @@
+/* Insert code here... */
+@import url('https://kit.fontawesome.com/fd5da098ab.css');
 
-:root {
-  --bg-color: #ffffff;
-  --nav: #ACD8E6;
-  --sel: rgb(238, 238, 238);
-  --text-color: #222222;
-  --zen-bg-image: var(--zen-bg-image-3);
-  --font-stack: "iA Writer Quattro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+/* Typografi */
+@font-face {
+    font-display: block;
+    font-family: "SF Pro", "iA Writer Quattro";
+    src: url("https://type.cargo.site/files/iAWriterQuattro-Regular.woff") format("woff");
+    font-style: normal;
+    font-weight: normal;
+    unicode-range: U+0000-DFFF, U+F900-FFFD;
 }
-
-html, body, .main_div,
-.tag, input, textarea, .list-h1,
-button.newbut,
-ul.checklists li.list_item .checklistName,
-ul.topLevel li.task, ul.topLevel ul li.task {
-  font-family: var(--font-stack) !important;
+@font-face {
+    font-display: block;
+    font-family: "SF Pro", "iA Writer Quattro";
+    src: url("https://type.cargo.site/files/iAWriterQuattro-Italic.woff") format("woff");
+    font-style: italic;
+    font-weight: normal;
+    unicode-range: U+0000-DFFF, U+F900-FFFD;
 }
-
-html, body, .main_div {
-  color: var(--text-color);
-  background-color: var(--bg-color);
+@font-face {
+    font-display: block;
+    font-family: "SF Pro", "iA Writer Quattro";
+    src: url("https://type.cargo.site/files/iAWriterQuattro-Bold.woff") format("woff");
+    font-style: normal;
+    font-weight: bold;
+    unicode-range: U+0000-DFFF, U+F900-FFFD;
+}
+@font-face {
+    font-display: block;
+    font-family: "SF Pro", "iA Writer Quattro";
+    src: url("https://type.cargo.site/files/iAWriterQuattro-BoldItalic.woff") format("woff");
+    font-style: italic;
+    font-weight: bold;
+    unicode-range: U+0000-DFFF, U+F900-FFFD;
 }
 
 body {
-  background-color: #fdfcef;
-  padding-bottom: 0;
+    font-family: "SF Pro", "iA Writer Quattro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !important;
+    background-color: #fdfcef;
 }
 
-div.coreDiv, .editable {
-  padding: 1px 0;
+.tag_låt-stå.tagClass_0 {
+    color: red;
 }
 
-.userContent h1 { font-size: 20px; font-weight: 600; }
-.userContent h2 { font-size: 16px; font-weight: 600; }
-.userContent h3 { font-size: 14px; font-weight: 600; }
-
-.userContent table { border-collapse: collapse; }
-.userContent td, .userContent th {
-  padding-right: 10px;
-  border-bottom: 1px solid #ccc !important;
+ul.dndUl {
+    border-left: 1px dotted lightblue;
 }
 
-span.node_text.editableList.userContent img { display: none; }
+span.contextUnder {
+    color: #999 !important;
+    padding: 2px 0 6px 0;
+}
 
-.dueList .listNameNode .node_text a,
-strong, b {
-  font-weight: 600;
+/* Ikoner för tags */
+.tag_dokument .userContent:before {
+    content: "\f15c";
+    /* An icon from the Font Awesome library */
+    font-family: FontAwesome;
+    font-size: 14px;
+    font-weight: 600;
+    padding-right: 5px;
+    color: lightblue;
+}
+
+.tag_ref .userContent:before {
+    content: "\f06e";
+    /* An icon from the Font Awesome library */
+    font-family: FontAwesome;
+    font-size: 14px;
+    padding-right: 5px;
+}
+
+
+.tag_område .userContent:before {
+    content: "\f06a";
+    /* An icon from the Font Awesome library */
+    font-family: FontAwesome;
+    font-size: 14px;
+    padding-right: 5px;
+    color: green;
+}
+
+.tag_pågår .userContent:before {
+    content: "\f042";
+    /* An icon from the Font Awesome library */
+    font-family: FontAwesome;
+    font-size: 14px;
+    padding-right: 5px;
+    color: orange;
+}
+
+.tag_fråga .userContent:before {
+    content: "\F059";
+    /* An icon from the Font Awesome library */
+    font-family: FontAwesome;
+    font-size: 14px;
+    padding-right: 5px;
+}
+
+.tag_fråga-besvarad .userContent:before {
+    content: "\F059";
+    /* An icon from the Font Awesome library */
+    font-family: FontAwesome;
+    font-size: 14px;
+    padding-right: 5px;
+    color: green;
+}
+
+
+.tag_möte .userContent:before {
+    content: "\F133";
+    /* An icon from the Font Awesome library */
+    font-family: FontAwesome;
+    font-size: 14px;
+    padding-right: 5px;
+}
+
+.tag_verktyg .userContent:before {
+    content: "\f0ad";
+    /* An icon from the Font Awesome library */
+    font-family: FontAwesome;
+    font-size: 14px;
+    padding-right: 5px;
+}
+
+.tag_person .userContent:before {
+    content: "\F183";
+    /* An icon from the Font Awesome library */
+    font-family: FontAwesome;
+    font-size: 14px;
+    padding-right: 5px;
+}
+
+/* En grej i taget */
+h1Id {
+    margin-right: auto;
+    font-weight: 600;
+    text-shadow: none;
+}
+
+h1 {
+    font-size: 14px;
+    padding: 0;
+    clear: right;
+    margin: 0 0 15px 0;
+}
+
+ul.checklists li.list_item .checklistName {
+    font-size: 14px;
+    padding-left: .5em;
+    font-weight: 400;
+    font-family: "iA Writer Quattro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+.tag_important .userContent {
+    font-weight: 600;
+    /* Bolder text /
+  color: darkorange; / Brighter color */
+}
+
+ul.topLevel li.task,
+ul.topLevel ul li.task {
+    font-size: 14px;
+    /* Makes all lines the same size /
+  / font-weight: 400; and weight */
+    font-family: "iA Writer Quattro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+.list-h1 {
+    font-family: "iA Writer Quattro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+.tag,
+input,
+textarea,
+html,
+body,
+.main_div {
+    font-family: "iA Writer Quattro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !important;
+}
+
+ul.topLevel li.task {
+    line-height: 1.1;
+    margin: 0;
+}
+div.coreDiv,
+.editable {
+    padding-top: 1px;
+    padding-bottom: 1px;
+}
+
+.userContent h2 {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.userContent h3 {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+span.node_text.editableList.userContent img {
+    display: none;
+}
+
+dueList .listNameNode .node_text a {
+    /* font-size: 22px; */
+    font-weight: 600;
+}
+button.newbut {
+    font-family: "iA Writer Quattro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    border: none;
+    background-color: #fff;
+    color: #999;
+}
+
+strong,
+b {
+    font-weight: 600;
 }
 
 img.logoImg {
-  border: none;
-  width: 140px;
+    border: none;
+    width: 140px;
 }
 
-.toolbarDiv, .toolBar {
-  background-color: #fff;
-  border-bottom: 1px solid #eee;
-  height: 33px;
-  box-sizing: border-box;
-  font-size: 14px;
-  line-height: 33px;
-  color: #333;
-  text-shadow: 0 1px 0 white;
-  font-weight: 400;
-}
-
-.toolBar.toolBar--flex.toolBar--list.content {
-  background-color: transparent;
-}
-
-.additionalText, .updLine, .updLine a, .dueDate {
-  color: #999;
-}
-
-.renderedImages {
-  background: #ccc;
-  padding: 16px 0 !important;
-}
-.renderedImages img {
-  width: 96% !important;
-  margin: auto !important;
-}
-
-.commentText { background-color: #FFFFE0; }
-
-.priority_1 .priorityColored,
-.priority_1 .priorityColored .userContent a {
-  color: #D02A00;
-}
-.priority_2 .priorityColored,
-.priority_2 .priorityColored .userContent a {
-  color: #0041E3;
-}
-.priority_3 .priorityColored,
-.priority_3 .priorityColored .userContent a {
-  color: #009C49;
-}
-.priority_4 .priorityColored,
-.priority_4 .priorityColored .userContent a {
-  background-color: #FFC8BA;
-  color: inherit;
-  border-radius: 2px;
-}
-.priority_5 .priorityColored,
-.priority_5 .priorityColored .userContent a {
-  background-color: #C3CCFF;
-  color: inherit;
-  border-radius: 2px;
-}
-.priority_6 .priorityColored,
-.priority_6 .priorityColored .userContent a {
-  background-color: #B0F2CD;
-  color: inherit;
-  border-radius: 2px;
-}
-.priority_7 .priorityColored,
-.priority_7 .priorityColored .userContent a {
-  background-color: #FFEBBA;
-  color: inherit;
-  border-radius: 2px;
-}
-.priority_8 .priorityColored,
-.priority_8 .priorityColored .userContent a {
-  background-color: #E7BEFF;
-  color: inherit;
-  border-radius: 2px;
-}
-.priority_9 .priorityColored,
-.priority_9 .priorityColored .userContent a {
-  background-color: #FFD6A6;
-  color: inherit;
-  border-radius: 2px;
-}
-
-h5.keyShortcuts,
-.sortListItem i.icon-ok-circle,
-.menuPopupList li.separatorWithText,
-table.part th,
-table.halfPart th,
-a.listActionsHandle,
-#progressItem,
-.helpContents h2 {
-  color: var(--nav);
-}
-
-.cl_nw, .cl_n, .cl_ne,
-.alert_title, .topbar__freshUpdatesCounter {
-  background-color: var(--nav);
-}
-
-.topTabs2 ul li.selected a,
-.cl_title {
-  border-color: var(--nav);
-}
-
-.menuPopupList li.selected,
-.menuPopupList li.selected a,
-.menuPopupList li.selected a:visited,
-li.selected .focusIcon,
-.chosenCv .chosen-container .chosen-results li.highlighted,
-li.list_item.highlight,
-.suggestionBox li.selected,
-.selectedTask > .treeSelectable,
-.selected .priorityColored,
-.infoMessage--suggestion:hover {
-  background-color: var(--sel);
-}
-
-.task--detailsExpanded > .treeSelectable,
-.taskExtraSection {
-  border-color: rgb(246, 246, 246);
-}
-
-.suggestionBox li.selected,
-.menuPopupList li.selected,
-.selectedTask_focus > .treeSelectable,
-.selectedTask_focus > .taskExtraSection,
-.chosenCv .chosen-container .chosen-results li.highlighted {
-  border-color: rgb(221, 221, 221);
-}
-
-.verticalGuide__selected {
-  border-left-color: #99cbec;
-}
-
-/* Tags och tag-icons får städas separat i nästa steg p.g.a. mängd */
-
-ul.topLevel li.task {
-  line-height: 1;
-  margin: 0;
-}
-ul.topLevel li.task .userContent {
-  margin-left: 0;
-  padding-left: 2px;
-}
-ul.topLevel li.task .userContent span {
-  margin-left: -2px;
-}
-
-.task .checkMark {
-  position: relative;
-  background: none !important;
-  border: none !important;
-  top: 2px !important;
-  display: inline-flex;
-  align-items: center;
-  gap: 0;
-  width: 16px;
-}
-.task .checkMark::before {
-  content: '' !important;
-  display: inline-block;
-  box-sizing: border-box;
-  width: 16px !important;
-  height: 16px !important;
-  background-color: transparent !important;
-  border: 2px solid #333 !important;
-  border-radius: 4px !important;
-  position: absolute;
-  top: 0;
-  left: 0;
-  transition: border-color 0.2s;
-}
-.task .checkMark:hover::before {
-  border-color: #555;
-}
-.coreDiv.task_closed .checkMark::before {
-  background-color: #5cb85c !important;
-  border: 2px solid #333 !important;
-}
-.coreDiv.task_closed .checkMark::after {
-  content: '✓' !important;
-  color: #fff !important;
-  font-size: 12px !important;
-  font-weight: bold;
-  position: absolute;
-  top: 50%;
-  left: 2px;
-  transform: translateY(-50%);
-}
-
-.coreDiv.task_closed {
-  text-decoration: none;
-  border: none !important;
-  box-shadow: none !important;
-  background: transparent !important;
+.selectedTask_focus > div.coreDiv,
+li.comment.selectedTask_focus div.coreNote,
+li.upload.selectedTask_focus {
+    border-color: rgb(199, 222, 237);
+    border: 0px solid red;
 }
 
 div.coreDiv.selectedTask,
 ul.comments li.comment.selectedTask div.coreNote {
-  background-color: rgb(230, 255, 255);
+    background-color: rgb(215, 239, 255);
 }
+
+
+
+.tag_verktygskategori .userContent:before {
+    content: "\f7d9";
+    /* An icon from the Font Awesome library */
+    font-family: FontAwesome;
+    font-size: 14px;
+    padding-right: 5px;
+}
+
+.tag_projekt .userContent {
+    font-size: 14px;
+    font-weight: 600;
+    /* Bolder text */
+}
+
+.tag_område .userContent {
+    font-size: 14px;
+    font-weight: 600;
+    /* Bolder text */
+}
+
+.tag_projekt .userContent:before {
+    content: "\f07b";
+    /* An icon from the Font Awesome library */
+    font-family: FontAwesome;
+    font-size: 14px;
+    padding-right: 5px;
+}
+
+.tag_fråga .userContent:before {
+    content: "\f059";
+    /* An icon from the Font Awesome library */
+    font-family: FontAwesome;
+    font-size: 14px;
+    padding-right: 5px;
+    color: red;
+}
+
+.tag_projekt-pågår .userContent:before {
+    content: "\f058";
+    /* An icon from the Font Awesome library */
+    font-family: FontAwesome;
+    font-size: 14px;
+    padding-right: 5px;
+    color: green;
+}
+
+.tag_projekt-möjligt .userContent:before {
+    content: "\f058";
+    /* An icon from the Font Awesome library */
+    font-family: FontAwesome;
+    font-size: 14px;
+    padding-right: 5px;
+    color: pink;
+}
+
+.tag_projekt-ska-göras .userContent {
+    font-weight: 600;
+    /* Bolder text */
+}
+
+.tag_projekt-ska-göras .userContent:before {
+    content: "\f058";
+    /* An icon from the Font Awesome library */
+    font-family: FontAwesome;
+    font-size: 14px;
+    padding-right: 5px;
+    color: yellow;
+}
+
+.tag_projekt-avslutat .userContent {
+    font-weight: 600;
+    /* Bolder text */
+}
+
+.tag_projekt-avslutat .userContent:before {
+    content: "\f058";
+    /* An icon from the Font Awesome library */
+    font-family: FontAwesome;
+    font-size: 14px;
+    padding-right: 5px;
+    color: red;
+}
+
+.tag_företag .userContent,
+.tag_person .userContent,
+.tag_beslut .userContent,
+.tag_dokument .userContent,
+.tag_projekt-pågår .userContent,
+.tag_projekt-möjligt .userContent,
+.tag_möte .userContent {
+    font-size: 14px;
+    font-weight: 600;
+    /* Bolder text */
+}
+
+.tag_företag .userContent:before {
+    content: "\f0b1";
+    font-family: FontAwesome;
+    font-size: 14px;
+    padding-right: 5px;
+}
+
+
+.tag_roadmap .userContent {
+    font-weight: 600;
+    /* Bolder text */
+}
+
+.tag_roadmap .userContent:before {
+    content: "\f0ca";
+    /* An icon from the Font Awesome library */
+    font-family: FontAwesome;
+    font-size: 14px;
+    padding-right: 5px;
+}
+
+.tag_m-notes .userContent:before {
+    content: "\f086";
+    /* An icon from the Font Awesome library */
+    font-family: FontAwesome;
+    font-size: 14px;
+    padding-right: 5px;
+}
+
+
+.numberedList .tag_projekt .userContent:before {
+    content: counters(section, ".") ". \f07b";
+    /* Same icon code as in previous section */
+}
+
+.tag_möte .userContent:before {
+    content: "\F133";
+    /* An icon from the Font Awesome library */
+    font-family: FontAwesome;
+    font-size: 14px;
+    padding-right: 5px;
+}
+
+/* The following section is required to fix case when icon is used with numbered lists */
+.numberedList .tag_möte .userContent:before {
+    content: counters(section, ".") ". \F06A";
+    /* Same icon code as in previous section */
+}
+
+span.bg1 {
+    background-color: yellow !important;
+}
+
+.tag_support .userContent:before {
+    content: "\f0f9";
+    /* An icon from the Font Awesome library */
+    font-family: FontAwesome;
+    font-size: 14px;
+    padding-right: 5px;
+}
+
+div.coreDiv.selectedTask,
+ul.comments li.comment.selectedTask div.coreNote {
+    background-color: rgb(230, 255, 255);
+}
+
 .selectedTask_focus > div.coreDiv,
 li.comment.selectedTask_focus div.coreNote,
 li.upload.selectedTask_focus {
-  border-color: rgb(230, 255, 255);
-  border: 0px solid red;
+    border-color: rgb(230, 255, 255);
+    border: 0px solid red;
 }
 
-@media print {
-  ul.topLevel, ul.topLevel ul {
-    list-style: none !important;
-    padding: 0 !important;
-    margin: 0 !important;
+.toolbarDiv {
+    background-color: #fff;
+    border-bottom: 1px solid #eee;
+    box-sizing: border-box;
+    height: 33px;
+    margin-bottom: 20px;
+}
+
+.toolBar {
+    border-bottom: 1px solid #eee;
+    box-sizing: border-box;
+    font-size: 13px;
+    height: 33px;
+    line-height: 33px;
+    color: #333;
+    text-shadow: 0 1px 0 white;
+    font-weight: 400;
+    background-color: #fff;
+}
+
+.tag_hus .userContent {
+    font-weight: 600;
+    /* Bolder text */
+}
+
+.tag_hus .userContent:before {
+    content: "\f015";
+    /* An icon from the Font Awesome library */
+    font-family: FontAwesome;
+    font-size: 14px;
+    padding-right: 5px;
+}
+
+span.tag_möjlighet {
+    background-color: orange;
+    color: #fff;
+    border: none;
+}
+
+span.tag_ps-pågår {
+    background-color: green;
+    color: #fff;
+    border: none;
+}
+
+span.tag_öb {
+    background-color: red;
+    color: #fff;
+    border: none;
+}
+
+span.tag_ps-avslutat {
+    background-color: red;
+    color: #fff;
+    border: none;
+}
+
+span.tag_ps-möjligt {
+    background-color: yellow;
+    color: #000;
+    border: none;
+}
+
+.tagClass_0,
+a.tagClass_0 {
+    background-color: transparent;
+    color: #999;
+    border: none;
+}
+
+span#header_span {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.userContent h1 {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.zenBgImage {
+    background-image: none;
+    background-color: #fdf4dc;
+    background-color: #fff;
+}
+
+.toolBar.toolBar--flex.toolBar--list.content {
+    background-color: transparent;
+}
+
+.additionalText,
+.updLine,
+.updLine a,
+.dueDate {
+    color: #999;
+}
+
+.renderedImages {
+    background: #ccc;
+    padding: 16px 0 !important;
+}
+
+
+.renderedImages img {
+    width: 96% !important;
+    margin: auto !important;
+}
+
+.commentText {
+    background-color: #FFFFE0;
+}
+
+.userContent table {
+    border-collapse: collapse;
+}
+.userContent td {
+    border-bottom: 1px solid #ccc;
+}
+.userContent td,
+.userContent th {
+    padding-right: 10px;
+    border-bottom: 1px solid #ccc !important;
+    margin: 0;
+}
+
+.tag_pågår .userContent {
+    font-weight: 500;
+    /* Bolder text */
+}
+
+.tag_pågår .userContent:before {
+    content: "\f28b";
+    /* An icon from the Font Awesome library */
+    font-family: var(--fa-family);
+    color: #000;
+    font-size: 14px;
+    padding-right: 5px;
+}
+
+/* The following section is required to fix case when icon is used with numbered lists */
+.numberedList .tag_pågår .userContent:before {
+    content: counters(section, ".") ". \F06A";
+    /* Same icon code as in previous section */
+}
+
+.tag_instruktion .userContent:before {
+    content: "\f02d";
+
+    padding-right: 5px;
+    color: #d50cd5;
+    font: var(--fa-font-regular);
+}
+
+
+
+/* Kanbanize */
+
+body {
+  padding-bottom: 0;
+}
+
+.main_div.list_tag_kanbanize > .layoutDiv > .toolbarDiv > div.toolBar {
+  max-width: unset;
+}
+
+.main_div.list_tag_kanbanize > .layoutDiv > div.content {
+  max-width: unset;
+  padding: 0;
+}
+
+.main_div.list_tag_kanbanize div.verticalGuide, 
+.main_div.list_tag_kanbanize div.verticalGuide__selected {
+  display: none;
+}
+
+.main_div.list_tag_kanbanize ul.topLevel {
+  display: flex;
+  overflow: hidden;
+  overflow-x: auto;
+  scrollbar-width: thin;
+  padding: 0 32px;
+}
+
+.main_div.list_tag_kanbanize ul.topLevel::-webkit-scrollbar {
+  height: 6px;
+  background: #eee;
+}
+
+.main_div.list_tag_kanbanize ul.topLevel::-webkit-scrollbar-thumb {
+  background: #ccc;
+}
+
+.main_div.list_tag_kanbanize ul.topLevel li.hiddenByFilter, 
+.main_div.list_tag_kanbanize ul.topLevel li.hidden {
+  border: 0 !important;
+  margin: 0 !important;
+}
+
+.main_div.list_tag_kanbanize ul.topLevel.focusActiveTop > li.hiddenByFilter {
+  display: none;
+}
+
+.main_div.list_tag_kanbanize ul.topLevel > li.task {
+  flex: 0 1 500px;
+  margin: 0;
+  padding: 0 22px 0 0;
+  counter-reset: cardCount;
+}
+
+.main_div.list_tag_kanbanize ul.topLevel li.task > div.coreDiv {
+  margin-right: 22px;
+}
+
+.main_div.list_tag_kanbanize ul.topLevel > li.task > div.coreDiv {
+  margin-left: 24px;
+  margin-right: 64px !important;
+}
+
+.main_div.list_tag_kanbanize ul.topLevel > li.task > div.coreDiv > i.act {
+  right: 8px;
+}
+
+.main_div.list_tag_kanbanize ul.topLevel > li.task > div.coreDiv.tag_count {
+  margin-right: 94px !important;
+}
+
+.main_div.list_tag_kanbanize .tag.tag_count {
+  display: none;
+}
+
+.main_div.list_tag_kanbanize ul.topLevel > li.task.node_collapsed {
+  max-width: 34px;
+  min-width: 34px;
+  margin-left: 0;
+}
+
+.main_div.list_tag_kanbanize ul.topLevel > li.task.node_collapsed > div.coreDiv {
+  padding: 1px 3px;
+  margin: 0 !important;
+  border: 1px solid black;
+}
+
+.main_div.list_tag_kanbanize ul.topLevel > li.task.node_collapsed > div.coreDiv > div.nodeImage.node_collapsed {
+  opacity: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  transform: rotate(0deg);
+}
+
+.main_div.list_tag_kanbanize ul.topLevel > li.task.node_collapsed > div.coreDiv > span.editable {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  padding: 4px 2px;
+  display: inline-block;
+}
+
+.main_div.list_tag_kanbanize ul.topLevel > li.task.node_collapsed > div.coreDiv > i.act {
+  display: none;
+}
+
+.main_div.list_tag_kanbanize ul.topLevel > li.task.node_collapsed > ul {
+  display: none;
+}
+
+.main_div.list_tag_kanbanize ul.topLevel > li.task.node_collapsed .progressCounter {
+  display: none;
+}
+
+.main_div.list_tag_kanbanize ul.topLevel > li.task > div.coreDiv > div.nodeImage:after {
+  content: "\f33e";
+  font-size: 14px;
+  position: absolute;
+  top: 4px;
+  left: 2px;
   }
-  li.task {
-    padding: 0 !important;
-    margin: 0 !important;
-    font-family: var(--font-stack) !important;
-  }
-  .task_body {
-    font-size: 11pt !important;
-    font-weight: 400 !important;
-    line-height: 1.1 !important;
-    padding: 2px 0 !important;
-  }
-  .task_body h1, .task_body h2, .task_body h3 {
-    font-weight: 700 !important;
-    margin: 0 !important;
-    padding: 0 !important;
-  }
-  .task_body h1 { font-size: 16pt !important; margin-top: 0.75em !important; }
-  .task_body h2 { font-size: 13pt !important; margin-top: 0.5em !important; }
-  .task_body h3 { font-size: 12pt !important; margin-top: 0.25em !important; }
-  ul.topLevel > li.task > ul {
-    margin-left: 20px !important;
-  }
-  ul.topLevel ul > li.task {
-    display: list-item !important;
-    list-style-type: disc !important;
-    list-style-position: outside !important;
-    padding-left: 5px !important;
-  }
-  ul.topLevel ul ul ul > li.task { list-style-type: circle !important; }
-  ul.topLevel ul ul ul ul > li.task { list-style-type: square !important; }
+
+.main_div.list_tag_kanbanize ul.topLevel > li.task > ul {
+  padding: 0 2px 0 24px;
+  overflow: hidden;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  height: calc(100vh - 168px) !important;
+  min-width: 300px;
+}
+
+.main_div.list_tag_kanbanize ul.topLevel > li.task > ul::-webkit-scrollbar {
+  width: 6px;
+  background: #eee;
+}
+
+.main_div.list_tag_kanbanize ul.topLevel > li.task > ul::-webkit-scrollbar-thumb {
+  width: 6px;
+  background: #ccc;
+}
+
+.main_div.list_tag_kanbanize ul.topLevel > li.task:not(.node_collapsed) > div.coreDiv.tag_count ~ ul::after {
+  position: absolute;
+  right: 24px;
+  top: 6px;
+  height: 17px;
+  min-width: 17px;
+  border: 1px solid black;
+  border-radius: 50%;
+  padding: 2px;
+  font-size: 0.7em;
+  line-height: 17px;
+  text-align: center;
+  content: counter(cardCount);
+}
+
+.main_div.list_tag_kanbanize ul.topLevel > li.task > ul > li.task {
+  margin: 0 0 2px 0;
+  box-shadow: 1px 2px 2px rgba(0, 0, 0, .1), -1px 2px 2px rgba(0, 0, 0, .1);
+  counter-increment: cardCount;
+}
+
+.main_div.list_tag_kanbanize ul.topLevel > li.task > ul > li.selectedTask {
+  background-color: rgb(246, 251, 255);
+}
+
+.main_div.list_tag_kanbanize ul.topLevel > li.task > ul > li.task > div.coreDiv {
+  margin: 0;
+  padding-right: 22px;
+  position: sticky;
+  top: 0px;
+  border: 1px solid black;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, .1);
+  z-index: 19;
+}
+
+.main_div.list_tag_kanbanize ul.topLevel > li.task > ul > li.task > div.coreDiv > i.act {
+  right: 8px;
+}
+
+.main_div.list_tag_kanbanize ul.topLevel > li.task > ul > li:not(.selectedTask) > div.coreDiv:not(.selectedTask) {
+  background-color: rgb(244,244,244);
+}
+
+.main_div.list_tag_kanbanize ul.topLevel > li.task > ul > li.task > ul:empty {
+  display: none;
+}
+
+.main_div.list_tag_kanbanize ul.topLevel > li.task > ul > li.task > ul:not(:empty) {
+  border: 1px solid black;
+  border-top-color: white;
+}
+
+.main_div.list_tag_kanbanize .textareaWrapper {
+  flex: 1 1 200px;
+}
+
+.main_div.list_tag_kanbanize .textareaWrapper > textarea{
+  width: 100% !important;
+}
+
+.main_div.list_tag_kanbanize #tasks_block {
+  margin-bottom: 0;
+}
+
+.main_div.list_tag_kanbanize .progressCounter {
+  right: -64px;
+  flex-direction: row-reverse;
+}
+
+.main_div.list_tag_kanbanize .progressCounter > .progressCounter__estimate {
+  position: initial;
+  margin-right: 4px; 
+}
+
+/* ==================================================================== */
+/* === KORRIGERAD STIL FÖR CHECKBOXAR (v3 - Positionsjusterad) === */
+/* ==================================================================== */
+
+/* Steg 1: Grundstilen för alla checkbox-ikoner i en uppgift */
+.task .checkMark {
+    position: relative;
+    background: none !important;
+    border: none !important;
+    top: 2px !important; /* JUSTERING: Flyttar ner hela rutan för att linjera med texten. Prova 1px, 2px eller 3px. */
+}
+
+/* Steg 2: Bygg upp den OFÄRDIGA rutan (röd ram) */
+.task .checkMark::before {
+    content: '' !important;
+    display: inline-block;
+    box-sizing: border-box;
+    width: 15px !important;
+    height: 15px !important;
+    background-color: transparent !important;
+    border: 2px solid #ff8a80 !important;
+    border-radius: 3px !important;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+/* Steg 3: Styla den FÄRDIGA rutan (grön fyllning och ram) */
+.coreDiv.task_closed .checkMark::before {
+    background-color: #5cb85c !important;
+    border-color: #4cae4c !important;
+}
+
+/* Steg 4: Skapa och positionera bocken (MINDRE VERSION) */
+.coreDiv.task_closed .checkMark::after {
+    content: '✓' !important;
+    color: white !important;
+    font-size: 12px !important;    /* JUSTERING: Minskad storlek från 14px */
+    font-weight: bold;
+    position: absolute;
+    top: 0px;                     /* JUSTERING: Ny position för den mindre bocken */
+    left: 2px;                      /* JUSTERING: Ny position för den mindre bocken */
+}
+
+/* ================================================== */
+/* === Minska avstånd mellan checkbox och text === */
+/* ================================================== */
+.task .icon-circle {
+    display: none !important;
+}
+
+.boxesList .userContent, 
+.boxesList .boxesList .userContent {
+   font-weight: 500; /* Bolder text */
+   border-bottom: 1px dotted gray;
 }
