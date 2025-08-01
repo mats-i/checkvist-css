@@ -815,3 +815,53 @@ li.upload.selectedTask_focus {
         list-style-type: square !important;
     }
 }
+
+/* Dölj checkboxar för vanliga noder (inte todo/task_closed) */
+.coreDiv:not(.todo):not(.task_closed) .checkMark {
+  display: none !important;
+}
+
+/* Tom checkbox – svart kant, ingen fyllning */
+.coreDiv.todo .checkMark {
+  position: relative;
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+}
+.coreDiv.todo .checkMark::before {
+  content: '';
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border: 2px solid #000;
+  border-radius: 4px;
+  background-color: transparent;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* Ifylld checkbox – grön bakgrund, vit bock, ingen kant */
+.coreDiv.task_closed .checkMark::before {
+  content: '';
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  background-color: #5cb85c;
+  border: none;
+  border-radius: 4px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.coreDiv.task_closed .checkMark::after {
+  content: '✓';
+  color: #fff;
+  font-size: 12px;
+  font-weight: bold;
+  position: absolute;
+  top: 50%;
+  left: 2px;
+  transform: translateY(-50%);
+}
