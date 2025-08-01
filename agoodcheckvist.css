@@ -1,29 +1,30 @@
 /* Generella stilar */
 :root {
+    --bg-color: #ffe4ee;
+    --nav: #ACD8E6;
+    --sel: rgb(238, 238, 238);
+:root {
     --bg-color: #ffffff;
     --nav: #ACD8E6;
     --sel: rgb(238, 238, 238);
     --text-color: #222222;
     --zen-bg-image: var(--zen-bg-image-3);
+    --font-main: "iA Writer Quattro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
 
+/* ===================== BASSTILAR ===================== */
+    --zen-bg-image: var(--zen-bg-image-3);
+    color: var(--text-color);
+    background-color: var(--bg-color);
+    font-family: var(--font-main) !important;
 html, body, .main_div {
     color: var(--text-color);
     background-color: var(--bg-color);
-}
-
-body {
+    background-color: #ffe4ee;
+    padding-bottom: 0;
     font-family: "SF Pro", "iA Writer Quattro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !important;
     background-color: #fdfcef;
-    padding-bottom: 0;
-}
-
-.tag,
-input,
-textarea,
-html,
-body,
-.main_div,
+/* ...existing code... */
 .list-h1 {
     font-family: "iA Writer Quattro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !important;
 }
@@ -52,14 +53,14 @@ div.coreDiv,
 .userContent table {
     border-collapse: collapse;
 }
-
-.userContent td,
+    font-weight: 400;
+    font-family: var(--font-main);
 .userContent th {
     padding-right: 10px;
     border-bottom: 1px solid #ccc !important;
     margin: 0;
 }
-
+    font-family: var(--font-main);
 span.node_text.editableList.userContent img {
     display: none;
 }
@@ -95,22 +96,7 @@ img.logoImg {
 
 .toolBar {
     border-bottom: 1px solid #eee;
-    box-sizing: border-box;
-    font-size: 14px;
-    height: 33px;
-    line-height: 33px;
-    color: #333;
-    text-shadow: 0 1px 0 white;
-    font-weight: 400;
-    background-color: #fff;
-}
-
-.toolBar.toolBar--flex.toolBar--list.content {
-    background-color: transparent;
-}
-
-.additionalText,
-.updLine,
+/* ...existing code... */
 .updLine a,
 .dueDate {
     color: #999;
@@ -284,31 +270,6 @@ li.list_item.highlight,
 }
 
 /* Textfärger under val */
-.selectedTask > .treeSelectable span.task_closed,
-.selectedTask > .treeSelectable span.task_invalidated,
-.selectedTask > .treeSelectable .updateLine,
-.selectedTask > .treeSelectable a,
-.menuPopupList li.selected,
-.menuPopupList li.selected a,
-.menuPopupList li.selected a:visited,
-.specialItem.selected .menuPopupList__icon,
-li.selected .focusIcon,
-.selected .priorityColored,
-.suggestionBox li.selected,
-li.list_item.highlight .checklists__cell,
-li.list_item.highlight .checklists__cell a,
-li.list_item.highlight .progressCounterText,
-#archivedListSection .highlight .checklistName a,
-li.comment.selectedTask div.coreNote,
-li.comment.selectedTask div.coreNote a,
-li.comment.selectedTask .taskExtraSection__details,
-li.upload.selectedTask .taskExtraSection__details,
-.selectedTask > .treeSelectable .userContent,
-.selectedTask > .treeSelectable .userContent a,
-.selectedTask > .treeSelectable .userContent a:visited,
-.selectedTask > .treeSelectable div.hrDivider,
-.selectedTask > .treeSelectable .dueDate {
-}
 
 /* Typografi och taggar */
 @font-face {
