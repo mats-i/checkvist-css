@@ -271,7 +271,7 @@ li.upload.selectedTask_focus {
   .task_body {
     font-size: 11pt !important;
     font-weight: 400 !important;
-    line-height: 1.4 !important;
+    line-height: 1.1 !important;
     padding: 2px 0 !important;
   }
   .task_body h1, .task_body h2, .task_body h3 {
