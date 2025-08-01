@@ -3,27 +3,17 @@
     --bg-color: #ffe4ee;
     --nav: #ACD8E6;
     --sel: rgb(238, 238, 238);
-:root {
-    --bg-color: #ffffff;
-    --nav: #ACD8E6;
-    --sel: rgb(238, 238, 238);
     --text-color: #222222;
     --zen-bg-image: var(--zen-bg-image-3);
     --font-main: "iA Writer Quattro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
 
 /* ===================== BASSTILAR ===================== */
-    --zen-bg-image: var(--zen-bg-image-3);
-    color: var(--text-color);
-    background-color: var(--bg-color);
-    font-family: var(--font-main) !important;
 html, body, .main_div {
     color: var(--text-color);
-    background-color: var(--bg-color);
-    background-color: #ffe4ee;
+    background-color: var(--bg-color) !important;
     padding-bottom: 0;
-    font-family: "SF Pro", "iA Writer Quattro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !important;
-    background-color: #fdfcef;
+    font-family: var(--font-main) !important;
 /* ...existing code... */
 .list-h1 {
     font-family: "iA Writer Quattro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !important;
