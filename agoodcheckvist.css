@@ -1,3 +1,5 @@
+@import url("https://use.typekit.net/eep3uuh.css");
+
 /* Generella stilar */
 :root {
     --bg-color: #ffffff;
@@ -5,19 +7,16 @@
     --sel: rgb(238, 238, 238);
     --text-color: #222222;
     --zen-bg-image: var(--zen-bg-image-3);
-    --font-main: "iA Writer Quattro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-}
+    --font-main: "Neue Haas Grotesk", -apple-system, sans-serif;
 
 /* ===================== BASSTILAR ===================== */
 html, body, .main_div {
     color: var(--text-color);
     background-color: var(--bg-color) !important;
     padding-bottom: 0;
-    font-family: var(--font-main) !important;
+    /* font-family removed for consistency */
 /* ...existing code... */
-.list-h1 {
-    font-family: "iA Writer Quattro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !important;
-}
+
 
 div.coreDiv,
 .editable {
@@ -27,18 +26,18 @@ div.coreDiv,
 
 .userContent h1 {
     font-size: 20px;
-    font-weight: 600;
+    /* font-family removed for consistency */
 }
 
 .userContent h2 {
-    font-size: 16px;
+    font-family: var(--font-main);
     font-weight: 600;
 }
 
 .userContent h3 {
     font-size: 14px;
     font-weight: 600;
-}
+    font-family: var(--font-main);
 
 .userContent table {
     border-collapse: collapse;
@@ -51,7 +50,7 @@ div.coreDiv,
     margin: 0;
 }
     font-family: var(--font-main);
-span.node_text.editableList.userContent img {
+        font-family: var(--font-main) !important;
     display: none;
 }
 
@@ -262,41 +261,7 @@ li.list_item.highlight,
 /* Textfärger under val */
 
 /* Typografi och taggar */
-@font-face {
-    font-display: block;
-    font-family: "SF Pro", "iA Writer Quattro";
-    src: url("https://type.cargo.site/files/iAWriterQuattro-Regular.woff") format("woff");
-    font-style: normal;
-    font-weight: normal;
-    unicode-range: U+0000-DFFF, U+F900-FFFD;
-}
-
-@font-face {
-    font-display: block;
-    font-family: "SF Pro", "iA Writer Quattro";
-    src: url("https://type.cargo.site/files/iAWriterQuattro-Italic.woff") format("woff");
-    font-style: italic;
-    font-weight: normal;
-    unicode-range: U+0000-DFFF, U+F900-FFFD;
-}
-
-@font-face {
-    font-display: block;
-    font-family: "SF Pro", "iA Writer Quattro";
-    src: url("https://type.cargo.site/files/iAWriterQuattro-Bold.woff") format("woff");
-    font-style: normal;
-    font-weight: bold;
-    unicode-range: U+0000-DFFF, U+F900-FFFD;
-}
-
-@font-face {
-    font-display: block;
-    font-family: "SF Pro", "iA Writer Quattro";
-    src: url("https://type.cargo.site/files/iAWriterQuattro-BoldItalic.woff") format("woff");
-    font-style: italic;
-    font-weight: bold;
-    unicode-range: U+0000-DFFF, U+F900-FFFD;
-}
+/* Neue Haas Grotesk laddas via extern länk i HTML: https://use.typekit.net/eep3uuh.css */
 
 h1Id {
     margin-right: auto;
