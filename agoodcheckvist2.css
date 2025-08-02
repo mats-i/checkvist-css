@@ -1,17 +1,19 @@
-/* Bullet framför rader som inte är rubrik, kommentar, note eller har checkbox */
-ul.topLevel li.task:not(.note):not(.list-h1):not(.comment):not(.header):not(:has(.checkMark)) .userContent:before {
+
+/* Bullet framför rader som INTE är rubriker, kommentarer, eller uppgifter med checkbox */
+li.task:not(.note):not(.list-h1):not(.comment):not(.header):not(.task_todo):not(.task_closed) .userContent:before {
     content: '•';
     color: #999;
     font-size: 1.2em;
     font-weight: bold;
     display: inline-block;
-    width: 1.2em;
-    text-align: center;
-    margin-left: 10px; /* matchar checkboxens vänsterjustering */
-    margin-right: 4px; /* matchar checkboxens spacing till text */
+    margin-right: 0.4em;
     position: relative;
-    top: 1px; /* vertikal finjustering för linjering */
+    top: 2px;
+    width: 1em;
+    text-align: center;
+    left: -8px; /* justera för exakt linjering */
 }
+
 
 
 /* Insert code here... */
