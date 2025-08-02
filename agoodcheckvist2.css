@@ -751,6 +751,7 @@ body {
 .task .checkMark {
     position: relative;
     background: none !important;
+    left: 0px;
     border: none !important;
     margin-left: 10px;
     top: 2px !important; /* JUSTERING: Flyttar ner hela rutan för att linjera med texten. Prova 1px, 2px eller 3px. */
