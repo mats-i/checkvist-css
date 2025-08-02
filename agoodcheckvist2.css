@@ -1,13 +1,19 @@
-/* Snygg bullet framför vanliga rader (ej rubriker eller anteckningar) */
+/* Bullet framför rader som inte är rubrik, kommentar, note eller har checkbox */
 ul.topLevel li.task:not(.note):not(.list-h1):not(.comment):not(.header):not(:has(.checkMark)) .userContent:before {
-    content: '\2022'; /* Unicode för bullet */
+    content: '•';
     color: #999;
     font-size: 1.2em;
     font-weight: bold;
-    margin-right: 0.6em;
-    vertical-align: middle;
     display: inline-block;
+    width: 1.2em;
+    text-align: center;
+    margin-left: 10px; /* matchar checkboxens vänsterjustering */
+    margin-right: 4px; /* matchar checkboxens spacing till text */
+    position: relative;
+    top: 1px; /* vertikal finjustering för linjering */
 }
+
+
 /* Insert code here... */
 @import url('https://kit.fontawesome.com/fd5da098ab.css');
 
@@ -529,224 +535,6 @@ span#header_span {
     padding-right: 5px;
     color: #d50cd5;
     font: var(--fa-font-regular);
-}
-
-
-
-/* Kanbanize */
-
-body {
-  padding-bottom: 0;
-}
-
-.main_div.list_tag_kanbanize > .layoutDiv > .toolbarDiv > div.toolBar {
-  max-width: unset;
-}
-
-.main_div.list_tag_kanbanize > .layoutDiv > div.content {
-  max-width: unset;
-  padding: 0;
-}
-
-.main_div.list_tag_kanbanize div.verticalGuide, 
-.main_div.list_tag_kanbanize div.verticalGuide__selected {
-  display: none;
-}
-
-.main_div.list_tag_kanbanize ul.topLevel {
-  display: flex;
-  overflow: hidden;
-  overflow-x: auto;
-  scrollbar-width: thin;
-  padding: 0 32px;
-}
-
-.main_div.list_tag_kanbanize ul.topLevel::-webkit-scrollbar {
-  height: 6px;
-  background: #eee;
-}
-
-.main_div.list_tag_kanbanize ul.topLevel::-webkit-scrollbar-thumb {
-  background: #ccc;
-}
-
-.main_div.list_tag_kanbanize ul.topLevel li.hiddenByFilter, 
-.main_div.list_tag_kanbanize ul.topLevel li.hidden {
-  border: 0 !important;
-  margin: 0 !important;
-}
-
-.main_div.list_tag_kanbanize ul.topLevel.focusActiveTop > li.hiddenByFilter {
-  display: none;
-}
-
-.main_div.list_tag_kanbanize ul.topLevel > li.task {
-  flex: 0 1 500px;
-  margin: 0;
-  padding: 0 22px 0 0;
-  counter-reset: cardCount;
-}
-
-.main_div.list_tag_kanbanize ul.topLevel li.task > div.coreDiv {
-  margin-right: 22px;
-}
-
-.main_div.list_tag_kanbanize ul.topLevel > li.task > div.coreDiv {
-  margin-left: 24px;
-  margin-right: 64px !important;
-}
-
-.main_div.list_tag_kanbanize ul.topLevel > li.task > div.coreDiv > i.act {
-  right: 8px;
-}
-
-.main_div.list_tag_kanbanize ul.topLevel > li.task > div.coreDiv.tag_count {
-  margin-right: 94px !important;
-}
-
-.main_div.list_tag_kanbanize .tag.tag_count {
-  display: none;
-}
-
-.main_div.list_tag_kanbanize ul.topLevel > li.task.node_collapsed {
-  max-width: 34px;
-  min-width: 34px;
-  margin-left: 0;
-}
-
-.main_div.list_tag_kanbanize ul.topLevel > li.task.node_collapsed > div.coreDiv {
-  padding: 1px 3px;
-  margin: 0 !important;
-  border: 1px solid black;
-}
-
-.main_div.list_tag_kanbanize ul.topLevel > li.task.node_collapsed > div.coreDiv > div.nodeImage.node_collapsed {
-  opacity: 0;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  transform: rotate(0deg);
-}
-
-.main_div.list_tag_kanbanize ul.topLevel > li.task.node_collapsed > div.coreDiv > span.editable {
-  writing-mode: vertical-rl;
-  transform: rotate(180deg);
-  padding: 4px 2px;
-  display: inline-block;
-}
-
-.main_div.list_tag_kanbanize ul.topLevel > li.task.node_collapsed > div.coreDiv > i.act {
-  display: none;
-}
-
-.main_div.list_tag_kanbanize ul.topLevel > li.task.node_collapsed > ul {
-  display: none;
-}
-
-.main_div.list_tag_kanbanize ul.topLevel > li.task.node_collapsed .progressCounter {
-  display: none;
-}
-
-.main_div.list_tag_kanbanize ul.topLevel > li.task > div.coreDiv > div.nodeImage:after {
-  content: "\f33e";
-  font-size: 14px;
-  position: absolute;
-  top: 4px;
-  left: 2px;
-  }
-
-.main_div.list_tag_kanbanize ul.topLevel > li.task > ul {
-  padding: 0 2px 0 24px;
-  overflow: hidden;
-  overflow-y: auto;
-  scrollbar-width: thin;
-  height: calc(100vh - 168px) !important;
-  min-width: 300px;
-}
-
-.main_div.list_tag_kanbanize ul.topLevel > li.task > ul::-webkit-scrollbar {
-  width: 6px;
-  background: #eee;
-}
-
-.main_div.list_tag_kanbanize ul.topLevel > li.task > ul::-webkit-scrollbar-thumb {
-  width: 6px;
-  background: #ccc;
-}
-
-.main_div.list_tag_kanbanize ul.topLevel > li.task:not(.node_collapsed) > div.coreDiv.tag_count ~ ul::after {
-  position: absolute;
-  right: 24px;
-  top: 6px;
-  height: 17px;
-  min-width: 17px;
-  border: 1px solid black;
-  border-radius: 50%;
-  padding: 2px;
-  font-size: 0.7em;
-  line-height: 17px;
-  text-align: center;
-  content: counter(cardCount);
-}
-
-.main_div.list_tag_kanbanize ul.topLevel > li.task > ul > li.task {
-  margin: 0 0 2px 0;
-  box-shadow: 1px 2px 2px rgba(0, 0, 0, .1), -1px 2px 2px rgba(0, 0, 0, .1);
-  counter-increment: cardCount;
-}
-
-.main_div.list_tag_kanbanize ul.topLevel > li.task > ul > li.selectedTask {
-  background-color: rgb(246, 251, 255);
-}
-
-.main_div.list_tag_kanbanize ul.topLevel > li.task > ul > li.task > div.coreDiv {
-  margin: 0;
-  padding-right: 22px;
-  position: sticky;
-  top: 0px;
-  border: 1px solid black;
-  box-shadow: 0px 2px 2px rgba(0, 0, 0, .1);
-  z-index: 19;
-}
-
-.main_div.list_tag_kanbanize ul.topLevel > li.task > ul > li.task > div.coreDiv > i.act {
-  right: 8px;
-}
-
-.main_div.list_tag_kanbanize ul.topLevel > li.task > ul > li:not(.selectedTask) > div.coreDiv:not(.selectedTask) {
-  background-color: rgb(244,244,244);
-}
-
-.main_div.list_tag_kanbanize ul.topLevel > li.task > ul > li.task > ul:empty {
-  display: none;
-}
-
-.main_div.list_tag_kanbanize ul.topLevel > li.task > ul > li.task > ul:not(:empty) {
-  border: 1px solid black;
-  border-top-color: white;
-}
-
-.main_div.list_tag_kanbanize .textareaWrapper {
-  flex: 1 1 200px;
-}
-
-.main_div.list_tag_kanbanize .textareaWrapper > textarea{
-  width: 100% !important;
-}
-
-.main_div.list_tag_kanbanize #tasks_block {
-  margin-bottom: 0;
-}
-
-.main_div.list_tag_kanbanize .progressCounter {
-  right: -64px;
-  flex-direction: row-reverse;
-}
-
-.main_div.list_tag_kanbanize .progressCounter > .progressCounter__estimate {
-  position: initial;
-  margin-right: 4px; 
 }
 
 /* ==================================================================== */
