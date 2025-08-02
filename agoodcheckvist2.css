@@ -744,6 +744,10 @@ body {
 /* ==================================================================== */
 
 /* Steg 1: Grundstilen för alla checkbox-ikoner i en uppgift */
+.checkMark {
+    left: 0px;
+}
+
 .task .checkMark {
     position: relative;
     background: none !important;
