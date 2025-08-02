@@ -1,5 +1,5 @@
 /* Snygg bullet framför vanliga rader (ej rubriker eller anteckningar) */
-ul.topLevel li.task:not(.note):not(.list-h1):not(.comment):not(.header) .userContent:before {
+ul.topLevel li.task:not(.note):not(.list-h1):not(.comment):not(.header):not(:has(.checkMark)) .userContent:before {
     content: '\2022'; /* Unicode för bullet */
     color: #999;
     font-size: 1.2em;
