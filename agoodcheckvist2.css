@@ -806,8 +806,3 @@ body {
     display: none !important;
 }
 
-.boxesList .userContent, 
-.boxesList .boxesList .userContent {
-   font-weight: 500; /* Bolder text */
-   border-bottom: 1px dotted gray;
-}
