@@ -1,3 +1,13 @@
+/* Snygg bullet framför vanliga rader (ej rubriker eller anteckningar) */
+ul.topLevel li.task:not(.note):not(.list-h1):not(.comment):not(.header) .userContent:before {
+    content: '\2022'; /* Unicode för bullet */
+    color: #999;
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-right: 0.6em;
+    vertical-align: middle;
+    display: inline-block;
+}
 /* Insert code here... */
 @import url('https://kit.fontawesome.com/fd5da098ab.css');
 
