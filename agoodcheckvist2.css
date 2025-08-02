@@ -1,9 +1,8 @@
-/* Bullet framför vanliga noder utan checkbox eller rubrikklass */
-.coreDiv:not(.task_todo):not(.task_closed):not(:has(.checkMark)):not(:has(.icon-list)):not(.header):not(.list-h1):not(.comment) .userContent::before {
+.coreDiv:not(.task_todo):not(.task_closed):not(:has(.checkMark)):not(.list-h1):not(.comment):not(.header):not(.tag_projekt):not(.tag_möte):not(.tag_fråga):not(.tag_dokument):not(.tag_person):not(.tag_ref):not(.tag_verktyg):not(.tag_beslut):not(.tag_support):not(.tag_hus):not(.tag_område) .userContent::before {
     content: '•';
     color: #999;
     font-size: 1.1em;
-    margin-right: 0.4em;
+    margin-right: 0.5em;
     display: inline-block;
     width: 1em;
     text-align: center;
@@ -11,6 +10,7 @@
     top: 1px;
     left: -0.4em;
 }
+
 
 /* Insert code here... */
 @import url('https://kit.fontawesome.com/fd5da098ab.css');
