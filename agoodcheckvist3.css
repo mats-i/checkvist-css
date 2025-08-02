@@ -9,3 +9,18 @@ body {
     font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif !important;
     background-color: #fff;
 }
+
+/* Highlight selected task row with light blue, no border */
+.selectedTask > div.coreDiv,
+ul.comments li.comment.selectedTask div.coreNote,
+li.upload.selectedTask {
+    background-color: #e6f7ff !important; /* light blue */
+    border: none !important;
+}
+
+/* Also remove border from focused selection */
+.selectedTask_focus > div.coreDiv,
+li.comment.selectedTask_focus div.coreNote,
+li.upload.selectedTask_focus {
+    border: none !important;
+}
