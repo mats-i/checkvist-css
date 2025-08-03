@@ -1,5 +1,6 @@
 /* Insert code here... */
 @import url('https://kit.fontawesome.com/fd5da098ab.css');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
 /* Typografi */
 @font-face {
@@ -36,7 +37,8 @@
 }
 
 body {
-    font-family: "SF Pro", "iA Writer Quattro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !important;
+    font-family:Roboto, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif !important;
+    /* font-family: "SF Pro", "iA Writer Quattro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !important; */
     background-color: #fdfcef;
 }
 
@@ -830,8 +832,3 @@ body {
     display: none !important;
 }
 
-.boxesList .userContent, 
-.boxesList .boxesList .userContent {
-   font-weight: 500; /* Bolder text */
-   border-bottom: 1px dotted gray;
-}
