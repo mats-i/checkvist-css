@@ -178,43 +178,70 @@ strong, b {
   display: none !important;
 }
 
-/* === ÅTERSTÄLL CHECKVISTS STANDARDLAYOUT === */
+/* =======================================
+   ÅTERSTÄLLNING AV CHECKVIST-LAYOUT
+   ======================================= */
 
-/* Återställ logotyp */
+/* Återställ logotypstorlek */
 img.logoImg {
-  width: 32px;
-  height: auto;
+  width: 32px !important;
+  height: auto !important;
 }
 
-/* Återställ rubriker i toppen */
-div.header h1,
-div.header h2 {
-  font-family: inherit !important;
+/* Återställ topplistan (listans namn) */
+div.listNameNode h1 {
   font-size: 20px !important;
   font-weight: 600 !important;
-  margin-bottom: 8px;
+  margin: 0 0 10px 0 !important;
+  background: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  border: none !important;
 }
 
-/* Återställ radavstånd, textrader och typografi */
+/* Rensa bort ev. grå bakgrund på rubrik */
+div.header h1,
+div.header h2 {
+  background: none !important;
+  box-shadow: none !important;
+}
+
+/* Återställ radavstånd och systemfont för listtext */
 ul.topLevel li.task,
 ul.topLevel ul li.task {
   font-size: 14px !important;
-  line-height: 1.3 !important;
-  margin: 0 !important;
+  line-height: 1.4 !important;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif !important;
-  font-weight: 400;
+  font-weight: 400 !important;
+  margin: 0 !important;
+  background: none !important;
 }
 
-/* Minska sidhuvudets storlek */
-div.toolbarDiv,
-div.toolBar {
+/* Justera checkboxrader */
+.coreDiv {
+  background: none !important;
+}
+
+/* Rensa oönskad bakgrund på markerad rad */
+li.selectedTask > div.coreDiv,
+div.coreDiv.selectedTask {
+  background-color: #eefaff !important; /* valfri ljusblå, eller "none" */
+  box-shadow: none !important;
+}
+
+/* Återställ toolbarhöjd */
+.toolbarDiv,
+.toolBar {
   height: 32px !important;
   font-size: 13px !important;
   line-height: 32px !important;
 }
 
-/* Minska storlek på listtitel */
-div.listNameNode h1 {
-  font-size: 18px !important;
-  font-weight: 600 !important;
+/* Återställ brödtext (t.ex. i anteckningar) */
+.userContent {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif !important;
+  font-size: 14px;
+  line-height: 1.5;
+  font-weight: 400;
+  background: none !important;
 }
