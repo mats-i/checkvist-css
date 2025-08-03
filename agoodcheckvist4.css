@@ -177,3 +177,44 @@ strong, b {
 .task .icon-circle {
   display: none !important;
 }
+
+/* === ÅTERSTÄLL CHECKVISTS STANDARDLAYOUT === */
+
+/* Återställ logotyp */
+img.logoImg {
+  width: 32px;
+  height: auto;
+}
+
+/* Återställ rubriker i toppen */
+div.header h1,
+div.header h2 {
+  font-family: inherit !important;
+  font-size: 20px !important;
+  font-weight: 600 !important;
+  margin-bottom: 8px;
+}
+
+/* Återställ radavstånd, textrader och typografi */
+ul.topLevel li.task,
+ul.topLevel ul li.task {
+  font-size: 14px !important;
+  line-height: 1.3 !important;
+  margin: 0 !important;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif !important;
+  font-weight: 400;
+}
+
+/* Minska sidhuvudets storlek */
+div.toolbarDiv,
+div.toolBar {
+  height: 32px !important;
+  font-size: 13px !important;
+  line-height: 32px !important;
+}
+
+/* Minska storlek på listtitel */
+div.listNameNode h1 {
+  font-size: 18px !important;
+  font-weight: 600 !important;
+}
