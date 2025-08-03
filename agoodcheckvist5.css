@@ -1,9 +1,9 @@
 /* Insert code here... */
-@import url('https://kit.fontawesome.com/fd5da098ab.css');
+/* @import url('https://kit.fontawesome.com/fd5da098ab.css'); */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
 body {
-    font-family:Roboto, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif !important;
+    font-family: Roboto, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif !important;
     /* font-family: "SF Pro", "iA Writer Quattro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !important; */
     background-color: #fdfcef;
 }
@@ -118,26 +118,26 @@ ul.checklists li.list_item .checklistName {
     font-size: 14px;
     padding-left: .5em;
     font-weight: 400;
-    font-family: "iA Writer Quattro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-}
+/*     font-family: "iA Writer Quattro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+ */}
 
 .tag_important .userContent {
     font-weight: 600;
-    /* Bolder text /
-  color: darkorange; / Brighter color */
+    /* Bolder text */
+  color: darkorange; 
+  / Brighter color */
 }
 
 ul.topLevel li.task,
 ul.topLevel ul li.task {
     font-size: 14px;
-    /* Makes all lines the same size /
-  / font-weight: 400; and weight */
-    font-family: "iA Writer Quattro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    /* Makes all lines the same size and weight */
+    font-weight: 400; 
 }
 
 .list-h1 {
-    font-family: "iA Writer Quattro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-}
+/*     font-family: "iA Writer Quattro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+ */}
 
 .tag,
 input,
@@ -145,8 +145,8 @@ textarea,
 html,
 body,
 .main_div {
-    font-family: "iA Writer Quattro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !important;
-}
+/*     font-family: "iA Writer Quattro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !important;
+ */}
 
 ul.topLevel li.task {
     line-height: 1.1;
@@ -177,8 +177,8 @@ dueList .listNameNode .node_text a {
     font-weight: 600;
 }
 button.newbut {
-    font-family: "iA Writer Quattro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-    border: none;
+/*     font-family: "iA Writer Quattro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+ */    border: none;
     background-color: #fff;
     color: #999;
 }
