@@ -1,0 +1,316 @@
+/* =======================================
+   CHECKVIST CUSTOM CSS
+   Förenklad och optimerad version
+   2025-08-03
+   ======================================= */
+
+/* ============================
+   == TYPOGRAFI & BAKGRUND ==
+   ============================ */
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background-color: #fdfcef;
+  padding-bottom: 0;
+}
+
+/* ============================
+   == GRUNDLÄGGANDE LAYOUT ==
+   ============================ */
+
+ul.dndUl {
+  border-left: 1px dotted lightblue;
+}
+
+ul.topLevel li.task,
+ul.topLevel ul li.task {
+  font-size: 14px;
+  line-height: 1.1;
+  margin: 0;
+}
+
+div.coreDiv,
+.editable {
+  padding-top: 1px;
+  padding-bottom: 1px;
+}
+
+span.contextUnder {
+  color: #999 !important;
+  padding: 2px 0 6px 0;
+}
+
+strong, b {
+  font-weight: 600;
+}
+
+/* ============================
+   == RUBRIKER ==
+   ============================ */
+
+h1 {
+  font-size: 14px;
+  margin: 0 0 15px 0;
+  padding: 0;
+  clear: right;
+}
+
+.userContent h1 {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.userContent h2 {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.userContent h3 {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+/* ============================
+   == CHECKLISTOR ==
+   ============================ */
+
+ul.checklists li.list_item .checklistName,
+.list-h1 {
+  font-size: 14px;
+  font-weight: 400;
+  font-family: inherit;
+}
+
+span.node_text.editableList.userContent img {
+  display: none;
+}
+
+/* ============================
+   == TAGGAR: STIL & FÄRG ==
+   ============================ */
+
+/* Allmän stil för taggikoner */
+.userContent:before {
+  font-family: FontAwesome;
+  font-size: 14px;
+  padding-right: 5px;
+}
+
+/* Neutrala taggar */
+.tagClass_0,
+a.tagClass_0 {
+  background-color: transparent;
+  color: #999;
+  border: none;
+}
+
+.tag_låt-stå.tagClass_0 {
+  color: red;
+}
+
+span.bg1 {
+  background-color: yellow !important;
+}
+
+/* Färgade taggar */
+span.tag_möjlighet,
+span.tag_ps-pågår,
+span.tag_öb,
+span.tag_ps-avslutat,
+span.tag_ps-möjligt {
+  color: #fff;
+  border: none;
+}
+
+span.tag_möjlighet     { background-color: orange; }
+span.tag_ps-pågår      { background-color: green; }
+span.tag_öb            { background-color: red; }
+span.tag_ps-avslutat   { background-color: red; }
+span.tag_ps-möjligt    { background-color: yellow; color: #000; }
+
+/* ============================
+   == TAGGAR: FONTVIKT ==
+   ============================ */
+
+.tag_företag .userContent,
+.tag_person .userContent,
+.tag_beslut .userContent,
+.tag_dokument .userContent,
+.tag_projekt-pågår .userContent,
+.tag_projekt-möjligt .userContent,
+.tag_möte .userContent,
+.tag_område .userContent,
+.tag_projekt .userContent,
+.tag_important .userContent,
+.tag_hus .userContent,
+.tag_roadmap .userContent,
+.tag_projekt-ska-göras .userContent,
+.tag_projekt-avslutat .userContent,
+.tag_pågår .userContent {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+/* ============================
+   == TAGGAR: IKONER ==
+   ============================ */
+
+.tag_dokument:before           { content: "\f15c"; color: lightblue; }
+.tag_ref:before                { content: "\f06e"; }
+.tag_område:before             { content: "\f06a"; color: green; }
+.tag_pågår:before              { content: "\f28b"; color: #000; }
+.tag_fråga:before              { content: "\f059"; color: red; }
+.tag_fråga-besvarad:before     { content: "\f059"; color: green; }
+.tag_möte:before               { content: "\f133"; }
+.tag_verktyg:before            { content: "\f0ad"; }
+.tag_person:before             { content: "\f183"; }
+.tag_verktygskategori:before   { content: "\f7d9"; }
+.tag_projekt:before            { content: "\f07b"; }
+.tag_projekt-pågår:before      { content: "\f058"; color: green; }
+.tag_projekt-möjligt:before    { content: "\f058"; color: pink; }
+.tag_projekt-ska-göras:before  { content: "\f058"; color: yellow; }
+.tag_projekt-avslutat:before   { content: "\f058"; color: red; }
+.tag_företag:before            { content: "\f0b1"; }
+.tag_roadmap:before            { content: "\f0ca"; }
+.tag_m-notes:before            { content: "\f086"; }
+.tag_support:before            { content: "\f0f9"; }
+.tag_hus:before                { content: "\f015"; }
+.tag_instruktion:before        { content: "\f02d"; color: #d50cd5; }
+
+/* ============================
+   == LOGOTYP & KNAPPAR ==
+   ============================ */
+
+img.logoImg {
+  border: none;
+  width: 140px;
+}
+
+button.newbut {
+  font-family: inherit;
+  border: none;
+  background-color: #fff;
+  color: #999;
+}
+
+/* ============================
+   == SELEKTERADE ELEMENT ==
+   ============================ */
+
+div.coreDiv.selectedTask,
+ul.comments li.comment.selectedTask div.coreNote {
+  background-color: rgb(230, 255, 255);
+}
+
+.selectedTask_focus > div.coreDiv,
+li.comment.selectedTask_focus div.coreNote,
+li.upload.selectedTask_focus {
+  border-color: rgb(230, 255, 255);
+}
+
+/* ============================
+   == TOOLBAR ==
+   ============================ */
+
+.toolbarDiv {
+  background-color: #fff;
+  border-bottom: 1px solid #eee;
+  height: 33px;
+  margin-bottom: 20px;
+}
+
+.toolBar {
+  border-bottom: 1px solid #eee;
+  font-size: 13px;
+  height: 33px;
+  line-height: 33px;
+  color: #333;
+  font-weight: 400;
+  background-color: #fff;
+}
+
+.toolBar.toolBar--flex.toolBar--list.content {
+  background-color: transparent;
+}
+
+/* ============================
+   == ANNAT ==
+   ============================ */
+
+.additionalText,
+.updLine,
+.updLine a,
+.dueDate {
+  color: #999;
+}
+
+.renderedImages {
+  background: #ccc;
+  padding: 16px 0 !important;
+}
+
+.renderedImages img {
+  width: 96% !important;
+  margin: auto !important;
+}
+
+.commentText {
+  background-color: #FFFFE0;
+}
+
+.userContent table {
+  border-collapse: collapse;
+}
+
+.userContent td,
+.userContent th {
+  padding-right: 10px;
+  border-bottom: 1px solid #ccc !important;
+  margin: 0;
+}
+
+/* ============================
+   == CHECKBOX-STIL ==
+   ============================ */
+
+.task .checkMark {
+  position: relative;
+  background: none !important;
+  border: none !important;
+  top: 2px !important;
+}
+
+.task .checkMark::before {
+  content: '' !important;
+  display: inline-block;
+  box-sizing: border-box;
+  width: 15px !important;
+  height: 15px !important;
+  background-color: transparent !important;
+  border: 2px solid #ff8a80 !important;
+  border-radius: 3px !important;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.coreDiv.task_closed .checkMark::before {
+  background-color: #5cb85c !important;
+  border-color: #4cae4c !important;
+}
+
+.coreDiv.task_closed .checkMark::after {
+  content: '✓' !important;
+  color: white !important;
+  font-size: 12px !important;
+  font-weight: bold;
+  position: absolute;
+  top: 0px;
+  left: 2px;
+}
+
+.task .icon-circle {
+  display: none !important;
+}
+
+
