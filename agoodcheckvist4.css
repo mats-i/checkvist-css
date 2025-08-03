@@ -1,13 +1,12 @@
 /* =======================================
    CHECKVIST CUSTOM CSS
-   Förenklad och optimerad version
+   Optimerad & kompatibel med FontAwesome i Checkvist
    2025-08-03
    ======================================= */
 
 /* ============================
    == TYPOGRAFI & BAKGRUND ==
    ============================ */
-
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   background-color: #fdfcef;
@@ -15,9 +14,8 @@ body {
 }
 
 /* ============================
-   == GRUNDLÄGGANDE LAYOUT ==
+   == LAYOUT OCH GRUNDSTILAR ==
    ============================ */
-
 ul.dndUl {
   border-left: 1px dotted lightblue;
 }
@@ -47,7 +45,6 @@ strong, b {
 /* ============================
    == RUBRIKER ==
    ============================ */
-
 h1 {
   font-size: 14px;
   margin: 0 0 15px 0;
@@ -73,7 +70,6 @@ h1 {
 /* ============================
    == CHECKLISTOR ==
    ============================ */
-
 ul.checklists li.list_item .checklistName,
 .list-h1 {
   font-size: 14px;
@@ -86,17 +82,8 @@ span.node_text.editableList.userContent img {
 }
 
 /* ============================
-   == TAGGAR: STIL & FÄRG ==
+   == TAGGAR: FÄRG & STIL ==
    ============================ */
-
-/* Allmän stil för taggikoner */
-.userContent:before {
-  font-family: FontAwesome;
-  font-size: 14px;
-  padding-right: 5px;
-}
-
-/* Neutrala taggar */
 .tagClass_0,
 a.tagClass_0 {
   background-color: transparent;
@@ -113,25 +100,13 @@ span.bg1 {
 }
 
 /* Färgade taggar */
-span.tag_möjlighet,
-span.tag_ps-pågår,
-span.tag_öb,
-span.tag_ps-avslutat,
-span.tag_ps-möjligt {
-  color: #fff;
-  border: none;
-}
+span.tag_möjlighet     { background-color: orange; color: #fff; border: none; }
+span.tag_ps-pågår      { background-color: green; color: #fff; border: none; }
+span.tag_öb            { background-color: red; color: #fff; border: none; }
+span.tag_ps-avslutat   { background-color: red; color: #fff; border: none; }
+span.tag_ps-möjligt    { background-color: yellow; color: #000; border: none; }
 
-span.tag_möjlighet     { background-color: orange; }
-span.tag_ps-pågår      { background-color: green; }
-span.tag_öb            { background-color: red; }
-span.tag_ps-avslutat   { background-color: red; }
-span.tag_ps-möjligt    { background-color: yellow; color: #000; }
-
-/* ============================
-   == TAGGAR: FONTVIKT ==
-   ============================ */
-
+/* Gemensam stil för viktiga taggar */
 .tag_företag .userContent,
 .tag_person .userContent,
 .tag_beslut .userContent,
@@ -153,34 +128,168 @@ span.tag_ps-möjligt    { background-color: yellow; color: #000; }
 
 /* ============================
    == TAGGAR: IKONER ==
+   (OBS! Alla använder äldre FontAwesome-syntax)
    ============================ */
+.tag_dokument .userContent:before {
+  content: "\f15c";
+  font-family: FontAwesome;
+  font-size: 14px;
+  padding-right: 5px;
+  color: lightblue;
+}
 
-.tag_dokument:before           { content: "\f15c"; color: lightblue; }
-.tag_ref:before                { content: "\f06e"; }
-.tag_område:before             { content: "\f06a"; color: green; }
-.tag_pågår:before              { content: "\f28b"; color: #000; }
-.tag_fråga:before              { content: "\f059"; color: red; }
-.tag_fråga-besvarad:before     { content: "\f059"; color: green; }
-.tag_möte:before               { content: "\f133"; }
-.tag_verktyg:before            { content: "\f0ad"; }
-.tag_person:before             { content: "\f183"; }
-.tag_verktygskategori:before   { content: "\f7d9"; }
-.tag_projekt:before            { content: "\f07b"; }
-.tag_projekt-pågår:before      { content: "\f058"; color: green; }
-.tag_projekt-möjligt:before    { content: "\f058"; color: pink; }
-.tag_projekt-ska-göras:before  { content: "\f058"; color: yellow; }
-.tag_projekt-avslutat:before   { content: "\f058"; color: red; }
-.tag_företag:before            { content: "\f0b1"; }
-.tag_roadmap:before            { content: "\f0ca"; }
-.tag_m-notes:before            { content: "\f086"; }
-.tag_support:before            { content: "\f0f9"; }
-.tag_hus:before                { content: "\f015"; }
-.tag_instruktion:before        { content: "\f02d"; color: #d50cd5; }
+.tag_ref .userContent:before {
+  content: "\f06e";
+  font-family: FontAwesome;
+  font-size: 14px;
+  padding-right: 5px;
+}
+
+.tag_område .userContent:before {
+  content: "\f06a";
+  font-family: FontAwesome;
+  font-size: 14px;
+  padding-right: 5px;
+  color: green;
+}
+
+.tag_pågår .userContent:before {
+  content: "\f28b";
+  font-family: FontAwesome;
+  font-size: 14px;
+  padding-right: 5px;
+  color: #000;
+}
+
+.tag_fråga .userContent:before {
+  content: "\f059";
+  font-family: FontAwesome;
+  font-size: 14px;
+  padding-right: 5px;
+  color: red;
+}
+
+.tag_fråga-besvarad .userContent:before {
+  content: "\f059";
+  font-family: FontAwesome;
+  font-size: 14px;
+  padding-right: 5px;
+  color: green;
+}
+
+.tag_möte .userContent:before {
+  content: "\f133";
+  font-family: FontAwesome;
+  font-size: 14px;
+  padding-right: 5px;
+}
+
+.tag_verktyg .userContent:before {
+  content: "\f0ad";
+  font-family: FontAwesome;
+  font-size: 14px;
+  padding-right: 5px;
+}
+
+.tag_person .userContent:before {
+  content: "\f183";
+  font-family: FontAwesome;
+  font-size: 14px;
+  padding-right: 5px;
+}
+
+.tag_verktygskategori .userContent:before {
+  content: "\f7d9";
+  font-family: FontAwesome;
+  font-size: 14px;
+  padding-right: 5px;
+}
+
+.tag_projekt .userContent:before {
+  content: "\f07b";
+  font-family: FontAwesome;
+  font-size: 14px;
+  padding-right: 5px;
+}
+
+.tag_projekt-pågår .userContent:before {
+  content: "\f058";
+  font-family: FontAwesome;
+  font-size: 14px;
+  padding-right: 5px;
+  color: green;
+}
+
+.tag_projekt-möjligt .userContent:before {
+  content: "\f058";
+  font-family: FontAwesome;
+  font-size: 14px;
+  padding-right: 5px;
+  color: pink;
+}
+
+.tag_projekt-ska-göras .userContent:before {
+  content: "\f058";
+  font-family: FontAwesome;
+  font-size: 14px;
+  padding-right: 5px;
+  color: yellow;
+}
+
+.tag_projekt-avslutat .userContent:before {
+  content: "\f058";
+  font-family: FontAwesome;
+  font-size: 14px;
+  padding-right: 5px;
+  color: red;
+}
+
+.tag_företag .userContent:before {
+  content: "\f0b1";
+  font-family: FontAwesome;
+  font-size: 14px;
+  padding-right: 5px;
+}
+
+.tag_roadmap .userContent:before {
+  content: "\f0ca";
+  font-family: FontAwesome;
+  font-size: 14px;
+  padding-right: 5px;
+}
+
+.tag_m-notes .userContent:before {
+  content: "\f086";
+  font-family: FontAwesome;
+  font-size: 14px;
+  padding-right: 5px;
+}
+
+.tag_support .userContent:before {
+  content: "\f0f9";
+  font-family: FontAwesome;
+  font-size: 14px;
+  padding-right: 5px;
+}
+
+.tag_hus .userContent:before {
+  content: "\f015";
+  font-family: FontAwesome;
+  font-size: 14px;
+  padding-right: 5px;
+}
+
+.tag_instruktion .userContent:before {
+  content: "\f02d";
+  font-family: FontAwesome;
+  font-size: 14px;
+  padding-right: 5px;
+  color: #d50cd5;
+}
 
 /* ============================
    == LOGOTYP & KNAPPAR ==
    ============================ */
-
 img.logoImg {
   border: none;
   width: 140px;
@@ -196,7 +305,6 @@ button.newbut {
 /* ============================
    == SELEKTERADE ELEMENT ==
    ============================ */
-
 div.coreDiv.selectedTask,
 ul.comments li.comment.selectedTask div.coreNote {
   background-color: rgb(230, 255, 255);
@@ -211,7 +319,6 @@ li.upload.selectedTask_focus {
 /* ============================
    == TOOLBAR ==
    ============================ */
-
 .toolbarDiv {
   background-color: #fff;
   border-bottom: 1px solid #eee;
@@ -236,7 +343,6 @@ li.upload.selectedTask_focus {
 /* ============================
    == ANNAT ==
    ============================ */
-
 .additionalText,
 .updLine,
 .updLine a,
@@ -272,7 +378,6 @@ li.upload.selectedTask_focus {
 /* ============================
    == CHECKBOX-STIL ==
    ============================ */
-
 .task .checkMark {
   position: relative;
   background: none !important;
@@ -312,5 +417,4 @@ li.upload.selectedTask_focus {
 .task .icon-circle {
   display: none !important;
 }
-
 
