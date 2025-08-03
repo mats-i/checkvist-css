@@ -1,12 +1,15 @@
 /* =======================================
    CHECKVIST CUSTOM CSS
-   Optimerad & kompatibel med FontAwesome i Checkvist
+   Kompatibel med FontAwesome 5 + systemfonter
    2025-08-03
    ======================================= */
+
+@import url('https://use.fontawesome.com/releases/v5.15.4/css/all.css');
 
 /* ============================
    == TYPOGRAFI & BAKGRUND ==
    ============================ */
+
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   background-color: #fdfcef;
@@ -14,156 +17,32 @@ body {
 }
 
 /* ============================
-   == LAYOUT OCH GRUNDSTILAR ==
-   ============================ */
-ul.dndUl {
-  border-left: 1px dotted lightblue;
-}
-
-ul.topLevel li.task,
-ul.topLevel ul li.task {
-  font-size: 14px;
-  line-height: 1.1;
-  margin: 0;
-}
-
-div.coreDiv,
-.editable {
-  padding-top: 1px;
-  padding-bottom: 1px;
-}
-
-span.contextUnder {
-  color: #999 !important;
-  padding: 2px 0 6px 0;
-}
-
-strong, b {
-  font-weight: 600;
-}
-
-/* ============================
-   == RUBRIKER ==
-   ============================ */
-h1 {
-  font-size: 14px;
-  margin: 0 0 15px 0;
-  padding: 0;
-  clear: right;
-}
-
-.userContent h1 {
-  font-size: 20px;
-  font-weight: 600;
-}
-
-.userContent h2 {
-  font-size: 16px;
-  font-weight: 600;
-}
-
-.userContent h3 {
-  font-size: 14px;
-  font-weight: 600;
-}
-
-/* ============================
-   == CHECKLISTOR ==
-   ============================ */
-ul.checklists li.list_item .checklistName,
-.list-h1 {
-  font-size: 14px;
-  font-weight: 400;
-  font-family: inherit;
-}
-
-span.node_text.editableList.userContent img {
-  display: none;
-}
-
-/* ============================
-   == TAGGAR: FÄRG & STIL ==
-   ============================ */
-.tagClass_0,
-a.tagClass_0 {
-  background-color: transparent;
-  color: #999;
-  border: none;
-}
-
-.tag_låt-stå.tagClass_0 {
-  color: red;
-}
-
-span.bg1 {
-  background-color: yellow !important;
-}
-
-/* Färgade taggar */
-span.tag_möjlighet     { background-color: orange; color: #fff; border: none; }
-span.tag_ps-pågår      { background-color: green; color: #fff; border: none; }
-span.tag_öb            { background-color: red; color: #fff; border: none; }
-span.tag_ps-avslutat   { background-color: red; color: #fff; border: none; }
-span.tag_ps-möjligt    { background-color: yellow; color: #000; border: none; }
-
-/* Gemensam stil för viktiga taggar */
-.tag_företag .userContent,
-.tag_person .userContent,
-.tag_beslut .userContent,
-.tag_dokument .userContent,
-.tag_projekt-pågår .userContent,
-.tag_projekt-möjligt .userContent,
-.tag_möte .userContent,
-.tag_område .userContent,
-.tag_projekt .userContent,
-.tag_important .userContent,
-.tag_hus .userContent,
-.tag_roadmap .userContent,
-.tag_projekt-ska-göras .userContent,
-.tag_projekt-avslutat .userContent,
-.tag_pågår .userContent {
-  font-size: 14px;
-  font-weight: 600;
-}
-
-/* ============================
    == TAGGAR: IKONER ==
-   (OBS! Alla använder äldre FontAwesome-syntax)
    ============================ */
-.tag_dokument .userContent:before {
-  content: "\f15c";
-  font-family: FontAwesome;
-  font-size: 14px;
-  padding-right: 5px;
-  color: lightblue;
-}
 
-.tag_ref .userContent:before {
-  content: "\f06e";
-  font-family: FontAwesome;
-  font-size: 14px;
-  padding-right: 5px;
-}
-
+/* Mall för taggar med FA5-ikoner */
 .tag_område .userContent:before {
-  content: "\f06a";
-  font-family: FontAwesome;
+  content: "\f07b"; /* folder */
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
   font-size: 14px;
   padding-right: 5px;
   color: green;
 }
 
-.tag_pågår .userContent:before {
-  content: "\f28b";
-  font-family: FontAwesome;
+.tag_dokument .userContent:before {
+  content: "\f15c"; /* file-alt */
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
   font-size: 14px;
   padding-right: 5px;
-  color: #000;
+  color: lightblue;
 }
 
 .tag_fråga .userContent:before {
-  content: "\f059";
-  font-family: FontAwesome;
+  content: "\f059"; /* question-circle */
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
   font-size: 14px;
   padding-right: 5px;
   color: red;
@@ -171,213 +50,80 @@ span.tag_ps-möjligt    { background-color: yellow; color: #000; border: none; }
 
 .tag_fråga-besvarad .userContent:before {
   content: "\f059";
-  font-family: FontAwesome;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
   font-size: 14px;
   padding-right: 5px;
   color: green;
 }
 
-.tag_möte .userContent:before {
-  content: "\f133";
-  font-family: FontAwesome;
-  font-size: 14px;
-  padding-right: 5px;
-}
-
-.tag_verktyg .userContent:before {
-  content: "\f0ad";
-  font-family: FontAwesome;
-  font-size: 14px;
-  padding-right: 5px;
-}
-
-.tag_person .userContent:before {
-  content: "\f183";
-  font-family: FontAwesome;
-  font-size: 14px;
-  padding-right: 5px;
-}
-
-.tag_verktygskategori .userContent:before {
-  content: "\f7d9";
-  font-family: FontAwesome;
-  font-size: 14px;
-  padding-right: 5px;
-}
-
 .tag_projekt .userContent:before {
-  content: "\f07b";
-  font-family: FontAwesome;
+  content: "\f0ae"; /* sitemap */
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
   font-size: 14px;
   padding-right: 5px;
 }
 
 .tag_projekt-pågår .userContent:before {
-  content: "\f058";
-  font-family: FontAwesome;
+  content: "\f111"; /* circle */
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
   font-size: 14px;
   padding-right: 5px;
   color: green;
 }
 
-.tag_projekt-möjligt .userContent:before {
-  content: "\f058";
-  font-family: FontAwesome;
-  font-size: 14px;
-  padding-right: 5px;
-  color: pink;
-}
-
-.tag_projekt-ska-göras .userContent:before {
-  content: "\f058";
-  font-family: FontAwesome;
-  font-size: 14px;
-  padding-right: 5px;
-  color: yellow;
-}
-
 .tag_projekt-avslutat .userContent:before {
-  content: "\f058";
-  font-family: FontAwesome;
+  content: "\f00c"; /* check */
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
   font-size: 14px;
   padding-right: 5px;
   color: red;
 }
 
-.tag_företag .userContent:before {
-  content: "\f0b1";
-  font-family: FontAwesome;
+.tag_möte .userContent:before {
+  content: "\f073"; /* calendar-alt */
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
   font-size: 14px;
   padding-right: 5px;
 }
 
-.tag_roadmap .userContent:before {
-  content: "\f0ca";
-  font-family: FontAwesome;
-  font-size: 14px;
-  padding-right: 5px;
-}
-
-.tag_m-notes .userContent:before {
-  content: "\f086";
-  font-family: FontAwesome;
+.tag_verktyg .userContent:before {
+  content: "\f0ad"; /* cog */
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
   font-size: 14px;
   padding-right: 5px;
 }
 
 .tag_support .userContent:before {
-  content: "\f0f9";
-  font-family: FontAwesome;
+  content: "\f0f9"; /* life-ring */
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
   font-size: 14px;
   padding-right: 5px;
 }
 
-.tag_hus .userContent:before {
-  content: "\f015";
-  font-family: FontAwesome;
-  font-size: 14px;
-  padding-right: 5px;
-}
-
-.tag_instruktion .userContent:before {
-  content: "\f02d";
-  font-family: FontAwesome;
-  font-size: 14px;
-  padding-right: 5px;
-  color: #d50cd5;
-}
-
 /* ============================
-   == LOGOTYP & KNAPPAR ==
+   == ÖVRIGA STILAR (valfritt) ==
    ============================ */
-img.logoImg {
-  border: none;
-  width: 140px;
+
+strong, b {
+  font-weight: 600;
 }
 
-button.newbut {
-  font-family: inherit;
-  border: none;
-  background-color: #fff;
-  color: #999;
+ul.dndUl {
+  border-left: 1px dotted lightblue;
 }
 
-/* ============================
-   == SELEKTERADE ELEMENT ==
-   ============================ */
-div.coreDiv.selectedTask,
-ul.comments li.comment.selectedTask div.coreNote {
-  background-color: rgb(230, 255, 255);
+span.contextUnder {
+  color: #999 !important;
+  padding: 2px 0 6px 0;
 }
 
-.selectedTask_focus > div.coreDiv,
-li.comment.selectedTask_focus div.coreNote,
-li.upload.selectedTask_focus {
-  border-color: rgb(230, 255, 255);
-}
-
-/* ============================
-   == TOOLBAR ==
-   ============================ */
-.toolbarDiv {
-  background-color: #fff;
-  border-bottom: 1px solid #eee;
-  height: 33px;
-  margin-bottom: 20px;
-}
-
-.toolBar {
-  border-bottom: 1px solid #eee;
-  font-size: 13px;
-  height: 33px;
-  line-height: 33px;
-  color: #333;
-  font-weight: 400;
-  background-color: #fff;
-}
-
-.toolBar.toolBar--flex.toolBar--list.content {
-  background-color: transparent;
-}
-
-/* ============================
-   == ANNAT ==
-   ============================ */
-.additionalText,
-.updLine,
-.updLine a,
-.dueDate {
-  color: #999;
-}
-
-.renderedImages {
-  background: #ccc;
-  padding: 16px 0 !important;
-}
-
-.renderedImages img {
-  width: 96% !important;
-  margin: auto !important;
-}
-
-.commentText {
-  background-color: #FFFFE0;
-}
-
-.userContent table {
-  border-collapse: collapse;
-}
-
-.userContent td,
-.userContent th {
-  padding-right: 10px;
-  border-bottom: 1px solid #ccc !important;
-  margin: 0;
-}
-
-/* ============================
-   == CHECKBOX-STIL ==
-   ============================ */
 .task .checkMark {
   position: relative;
   background: none !important;
@@ -417,4 +163,3 @@ li.upload.selectedTask_focus {
 .task .icon-circle {
   display: none !important;
 }
-
