@@ -867,3 +867,21 @@ div.coreDiv.selectedTask {
   font-weight: 400;
   background: none !important;
 }
+
+/* Justera placering av checkbox och text */
+
+.task .checkMark {
+  margin-right: 8px;
+  position: static !important;
+}
+
+.coreDiv {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.userContent {
+  display: inline-block;
+  margin-left: 0 !important;
+}
