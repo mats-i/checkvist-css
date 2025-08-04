@@ -787,7 +787,7 @@ ul.topLevel ul li.task {
 
 /* Justera checkboxrader */
 .coreDiv {
-  background: none !important;
+  /* background: none !important; */
 }
 
 /* Rensa oönskad bakgrund på markerad rad */
