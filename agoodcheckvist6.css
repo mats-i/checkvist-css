@@ -168,7 +168,7 @@ img.logoImg {
 .tag_m-notes .userContent:before     { content: "\f086"; }
 
 [class^="tag_"] .userContent:before {
-  font-family: "Font Awesome 5 Free";
+  font-family: "FontAwesome";
   font-weight: 900;
   font-size: 14px;
   padding-right: 5px;
