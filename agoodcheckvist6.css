@@ -19,8 +19,6 @@ html, body, .main_div,
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif !important;
 }
 
-.page-wrap { background-color: white; }
-
 /* === STIL PÅ UPPGIFTER === */
 ul.topLevel li.task,
 ul.topLevel ul li.task {
