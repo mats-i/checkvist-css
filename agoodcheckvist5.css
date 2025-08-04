@@ -1,5 +1,3 @@
-/* Insert code here... */
-/* @import url('https://kit.fontawesome.com/fd5da098ab.css'); */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
 body {
@@ -115,6 +113,7 @@ h1 {
     padding: 0;
     clear: right;
     margin: 0 0 15px 0;
+    font-weight: 200;
 }
 
 ul.checklists li.list_item .checklistName {
@@ -139,8 +138,8 @@ ul.topLevel ul li.task {
 }
 
 .list-h1 {
-/*     font-family: "iA Writer Quattro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
- */}
+  font-family: Roboto, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif !important;
+}
 
 .tag,
 input,
@@ -148,8 +147,7 @@ textarea,
 html,
 body,
 .main_div {
-/*     font-family: "iA Writer Quattro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !important;
- */}
+}
 
 ul.topLevel li.task {
     line-height: 1.1;
@@ -180,8 +178,7 @@ dueList .listNameNode .node_text a {
     font-weight: 600;
 }
 button.newbut {
-/*     font-family: "iA Writer Quattro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
- */    border: none;
+   border: none;
     background-color: #fff;
     color: #999;
 }
