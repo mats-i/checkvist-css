@@ -186,11 +186,6 @@ b {
     font-weight: 600;
 }
 
-img.logoImg {
-    border: none;
-    width: 140px;
-}
-
 /* .selectedTask_focus > div.coreDiv,
 li.comment.selectedTask_focus div.coreNote,
 li.upload.selectedTask_focus {
