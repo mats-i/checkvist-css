@@ -196,12 +196,12 @@ img.logoImg {
     width: 140px;
 }
 
-.selectedTask_focus > div.coreDiv,
+/* .selectedTask_focus > div.coreDiv,
 li.comment.selectedTask_focus div.coreNote,
 li.upload.selectedTask_focus {
     border-color: rgb(199, 222, 237);
     border: 0px solid red;
-}
+} */
 
 div.coreDiv.selectedTask,
 ul.comments li.comment.selectedTask div.coreNote {
@@ -819,20 +819,3 @@ div.coreDiv.selectedTask {
   background: none !important;
 }
 
-/* Justera placering av checkbox och text */
-
-.task .checkMark {
-  margin-right: 8px;
-  position: static !important;
-}
-
-.coreDiv {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.userContent {
-  display: inline-block;
-  margin-left: 0 !important;
-}
