@@ -161,7 +161,7 @@ img.logoImg {
 
 [class^="tag_"] .userContent:before {
   font-family: "FontAwesome";
-  font-weight: 900;
+  font-weight: 600;
   font-size: 14px;
   padding-right: 5px;
 }
