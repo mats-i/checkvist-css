@@ -1,14 +1,6 @@
-/* ==UserStyle==
-@name           checkvist.com
-@namespace      github.com/openstyles/stylus
-@version        1.0.1
-@description    Custom Checkvist style
-@author         Du
-==/UserStyle== */
+
 
 /* === GRUNDLÄGGANDE TYPSNITT & BAKGRUND === */
-
-@import url('https://kit.fontawesome.com/fd5da098ab.css'); 
 
 body {
   background-color: #fff;
