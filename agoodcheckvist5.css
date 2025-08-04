@@ -781,7 +781,7 @@ ul.topLevel li.task,
 ul.topLevel ul li.task {
   font-size: 14px !important;
   line-height: 1.4 !important;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif !important;
+  font-family: Roboto, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif !important;
   font-weight: 400 !important;
   margin: 0 !important;
   background: none !important;
@@ -809,7 +809,7 @@ div.coreDiv.selectedTask {
 
 /* Återställ brödtext (t.ex. i anteckningar) */
 .userContent {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif !important;
+  font-family: Roboto, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif !important;
   font-size: 14px;
   line-height: 1.5;
   font-weight: 400;
