@@ -745,11 +745,7 @@ body {
    ÅTERSTÄLLNING AV CHECKVIST-LAYOUT
    ======================================= */
 
-/* Återställ logotypstorlek */
-img.logoImg {
-  width: 32px !important;
-  height: auto !important;
-}
+img.logoImg { height: 24px !important; width: auto !important; }
 
 /* Återställ topplistan (listans namn) */
 div.listNameNode h1 {
