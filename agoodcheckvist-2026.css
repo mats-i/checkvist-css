@@ -41,6 +41,8 @@ span.contextUnder {
 .tag_möte .userContent:before      { content: "\f133"; }
 .tag_verktyg .userContent:before   { content: "\f0ad"; }
 .tag_person .userContent:before    { content: "\f183"; }
+.tag_todo .userContent:before      { content: "\f096"; color: #245b9a; } /* square-o (tom checkbox) */
+.tag_todo .userContent.task_closed:before { content: "\f046"; color: green; } /* check-square-o (bockad) */
 
 /* En grej i taget */
 #h1Id {
