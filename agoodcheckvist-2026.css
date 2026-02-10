@@ -1,0 +1,640 @@
+/* ======================================================================
+   CHECKVIST – CLEAN CSS (2026)
+   - Fokus: stabilitet + tydlig semantik
+   - Status (Cmd+Enter) = state (done/cancelled etc)
+   - Taggar = typ & klassificering (#todo, #p-pågår/#p-möjligt/#p-avslutat)
+   - Ikoner: Font Awesome 5 Free (Solid 900)
+   ====================================================================== */
+
+:root {
+  /* Base */
+  --cv-bg: #fdfcef;
+  --cv-ui-bg: #ffffff;
+  --cv-border: #eeeeee;
+  --cv-muted: #999999;
+
+  /* Selection */
+  --cv-selected-bg: #eefaff;
+
+  /* Typography */
+  --cv-font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --cv-font-size: 14px;
+
+  /* Font Awesome 5 Free (Solid) */
+  --fa-family: "Font Awesome 5 Free";
+  --fa-weight: 900;
+  --fa-size: 14px;
+
+  /* Chips */
+  --chip-radius: 999px;
+  --chip-pad-y: 1px;
+  --chip-pad-x: 7px;
+}
+
+/* ======================================================================
+   BASE
+   ====================================================================== */
+
+html,
+body,
+.main_div {
+  font-family: var(--cv-font) !important;
+}
+
+body {
+  background-color: var(--cv-bg);
+  padding-bottom: 0;
+}
+
+span.contextUnder {
+  color: var(--cv-muted) !important;
+  padding: 2px 0 6px 0;
+}
+
+ul.dndUl {
+  border-left: 1px dotted lightblue;
+}
+
+.additionalText,
+.updLine,
+.updLine a,
+.dueDate {
+  color: var(--cv-muted);
+}
+
+strong,
+b {
+  font-weight: 600;
+}
+
+/* ======================================================================
+   HEADERS / TYPOGRAPHY
+   ====================================================================== */
+
+h1 {
+  font-size: 14px;
+  padding: 0;
+  clear: right;
+  margin: 0 0 15px 0;
+  font-weight: 200;
+}
+
+.userContent h1 {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.userContent h2 {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.userContent h3 {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+ul.checklists li.list_item .checklistName {
+  font-size: 14px;
+  padding-left: 0.5em;
+  font-weight: 400;
+}
+
+/* Uniform list text */
+ul.topLevel li.task,
+ul.topLevel ul li.task {
+  font-size: var(--cv-font-size);
+  font-weight: 400;
+}
+
+ul.topLevel li.task {
+  line-height: 1.15;
+  margin: 0;
+}
+
+div.coreDiv,
+.editable {
+  padding-top: 1px;
+  padding-bottom: 1px;
+}
+
+/* Hide inline images in list text (as in your original) */
+span.node_text.editableList.userContent img {
+  display: none;
+}
+
+/* ======================================================================
+   TOOLBAR / BUTTONS
+   ====================================================================== */
+
+button.newbut {
+  border: none;
+  background-color: var(--cv-ui-bg);
+  color: var(--cv-muted);
+}
+
+.toolbarDiv {
+  background-color: var(--cv-ui-bg);
+  border-bottom: 1px solid var(--cv-border);
+  box-sizing: border-box;
+  height: 33px;
+  margin-bottom: 20px;
+}
+
+.toolBar {
+  border-bottom: 1px solid var(--cv-border);
+  box-sizing: border-box;
+  font-size: 13px;
+  height: 33px;
+  line-height: 33px;
+  color: #333;
+  text-shadow: 0 1px 0 white;
+  font-weight: 400;
+  background-color: var(--cv-ui-bg);
+}
+
+.toolBar.toolBar--flex.toolBar--list.content {
+  background-color: transparent;
+}
+
+span#header_span {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+/* ======================================================================
+   SELECTION / FOCUS
+   ====================================================================== */
+
+div.coreDiv.selectedTask,
+ul.comments li.comment.selectedTask div.coreNote,
+li.selectedTask > div.coreDiv {
+  background-color: var(--cv-selected-bg) !important;
+  box-shadow: none !important;
+}
+
+/* Keep your debug border style (set to 0 by default) */
+.selectedTask_focus > div.coreDiv,
+li.comment.selectedTask_focus div.coreNote,
+li.upload.selectedTask_focus {
+  border-color: var(--cv-selected-bg);
+  border: 0px solid red;
+}
+
+/* ======================================================================
+   TAGS – GENERAL
+   ====================================================================== */
+
+/* Neutral default for “tagClass_0” (as you had) */
+.tagClass_0,
+a.tagClass_0 {
+  background-color: transparent;
+  color: var(--cv-muted);
+  border: none;
+}
+
+/* Example: special tag override (kept) */
+.tag_låt-stå.tagClass_0 {
+  color: red;
+}
+
+/* Important tag (fixed) */
+.tag_important .userContent {
+  font-weight: 600;
+  color: darkorange;
+}
+
+/* ======================================================================
+   TAGS – ICONS (FA5 Free Solid)
+   - Base icon rule: OFF by default (content:"")
+   - Per-tag sets content + optional color
+   ====================================================================== */
+
+[class*="tag_"] .userContent:before {
+  display: inline-block;
+  width: 1.1em;
+  margin-right: 6px;
+  text-align: center;
+  font-family: var(--fa-family);
+  font-weight: var(--fa-weight);
+  font-size: var(--fa-size);
+  color: #8aa;
+  content: "";
+}
+
+/* (Optional) Keep some of your original semantics, consistent FA5 setup */
+.tag_dokument .userContent:before { content: "\f15c"; color: lightblue; } /* file-alt */
+.tag_ref .userContent:before      { content: "\f06e"; }                  /* eye */
+.tag_område .userContent:before   { content: "\f06a"; color: green; }     /* exclamation-circle */
+.tag_fråga .userContent:before    { content: "\f059"; color: red; }       /* question-circle */
+.tag_fråga-besvarad .userContent:before { content: "\f059"; color: green; }
+.tag_möte .userContent:before     { content: "\f133"; }                  /* calendar */
+.tag_verktyg .userContent:before  { content: "\f0ad"; }                  /* wrench */
+.tag_person .userContent:before   { content: "\f183"; }                  /* user */
+.tag_företag .userContent:before  { content: "\f0b1"; }                  /* briefcase */
+.tag_beslut .userContent:before   { content: "\f0e3"; }                  /* gavel (decision-ish) */
+.tag_support .userContent:before  { content: "\f0f9"; }                  /* medkit */
+.tag_roadmap .userContent:before  { content: "\f0ca"; }                  /* list */
+.tag_hus .userContent:before      { content: "\f015"; }                  /* home */
+.tag_instruktion .userContent:before { content: "\f02d"; color: #d50cd5; } /* book */
+
+/* ======================================================================
+   #todo – VISUALISERING
+   - Taggchip + (valfri) ikon före raden
+   ====================================================================== */
+
+/* Chip for the tag itself */
+span.tag_todo,
+a.tag_todo {
+  background: #eef6ff;
+  color: #245b9a;
+  border: 1px solid #cfe5ff;
+  border-radius: var(--chip-radius);
+  padding: var(--chip-pad-y) var(--chip-pad-x);
+  font-weight: 700;
+}
+
+/* Optional: show an icon at start of todo lines (even if tag chip is hidden later) */
+.tag_todo .userContent:before {
+  content: "\f0ae"; /* tasks */
+  color: #245b9a;
+}
+
+/* If a task is done (status via Cmd+Enter), tone down todo chip */
+li.task.task_done span.tag_todo,
+li.task.status_done span.tag_todo,
+li.task.node_done span.tag_todo {
+  background: transparent;
+  border-color: transparent;
+  color: var(--cv-muted);
+}
+
+/* If done, make the icon neutral too */
+li.task.task_done.tag_todo .userContent:before,
+li.task.status_done.tag_todo .userContent:before,
+li.task.node_done.tag_todo .userContent:before {
+  color: var(--cv-muted);
+}
+
+/* Done state – general readability (selector names can vary; keep broad) */
+li.task.task_done .userContent,
+li.task.status_done .userContent,
+li.task.node_done .userContent {
+  opacity: 0.6;
+  text-decoration: line-through;
+}
+
+/* ======================================================================
+   PROJEKTSTATUS: #p-pågår / #p-möjligt / #p-avslutat
+   - Chips + tydlig ikon på raden
+   ====================================================================== */
+
+/* Base chip */
+span.tag_p-pågår, a.tag_p-pågår,
+span.tag_p-möjligt, a.tag_p-möjligt,
+span.tag_p-avslutat, a.tag_p-avslutat {
+  border-radius: var(--chip-radius);
+  padding: var(--chip-pad-y) var(--chip-pad-x);
+  font-weight: 800;
+  border: 1px solid transparent;
+}
+
+/* Pågår = grön */
+span.tag_p-pågår, a.tag_p-pågår {
+  background: #e8f7ee;
+  color: #136b3a;
+  border-color: #bfe6cf;
+}
+
+/* Möjligt = orange */
+span.tag_p-möjligt, a.tag_p-möjligt {
+  background: #fff4e5;
+  color: #8a4b00;
+  border-color: #ffd9a8;
+}
+
+/* Avslutat = grå */
+span.tag_p-avslutat, a.tag_p-avslutat {
+  background: #f2f2f2;
+  color: #666;
+  border-color: #ddd;
+}
+
+/* Optional: show folder icon on project-status lines */
+.tag_p-pågår .userContent:before,
+.tag_p-möjligt .userContent:before,
+.tag_p-avslutat .userContent:before {
+  content: "\f07b"; /* folder */
+  color: #888;
+}
+
+/* If a project is “avslutat”, tone down the line a bit (without requiring :has()) */
+li.task.tag_p-avslutat .userContent,
+li.task.tag_p-avslutat .editableList {
+  opacity: 0.75;
+}
+
+/* ======================================================================
+   TABLES / IMAGES / COMMENTS
+   ====================================================================== */
+
+.renderedImages {
+  background: #ccc;
+  padding: 16px 0 !important;
+}
+
+.renderedImages img {
+  width: 96% !important;
+  margin: auto !important;
+}
+
+.commentText {
+  background-color: #ffffe0;
+}
+
+.userContent table {
+  border-collapse: collapse;
+}
+
+.userContent td,
+.userContent th {
+  padding-right: 10px;
+  border-bottom: 1px solid #ccc !important;
+  margin: 0;
+}
+
+/* ======================================================================
+   ZEN BACKGROUND
+   ====================================================================== */
+
+.zenBgImage {
+  background-image: none;
+  background-color: #fff;
+}
+
+/* ======================================================================
+   KANBANIZE (scoped)
+   - triggers on list tag: #kanbanize (Checkvist adds list_tag_kanbanize on main_div)
+   ====================================================================== */
+
+.main_div.list_tag_kanbanize > .layoutDiv > .toolbarDiv > div.toolBar {
+  max-width: unset;
+}
+
+.main_div.list_tag_kanbanize > .layoutDiv > div.content {
+  max-width: unset;
+  padding: 0;
+}
+
+.main_div.list_tag_kanbanize div.verticalGuide,
+.main_div.list_tag_kanbanize div.verticalGuide__selected {
+  display: none;
+}
+
+.main_div.list_tag_kanbanize ul.topLevel {
+  display: flex;
+  overflow: hidden;
+  overflow-x: auto;
+  scrollbar-width: thin;
+  padding: 0 32px;
+}
+
+.main_div.list_tag_kanbanize ul.topLevel::-webkit-scrollbar {
+  height: 6px;
+  background: #eee;
+}
+
+.main_div.list_tag_kanbanize ul.topLevel::-webkit-scrollbar-thumb {
+  background: #ccc;
+}
+
+.main_div.list_tag_kanbanize ul.topLevel li.hiddenByFilter,
+.main_div.list_tag_kanbanize ul.topLevel li.hidden {
+  border: 0 !important;
+  margin: 0 !important;
+}
+
+.main_div.list_tag_kanbanize ul.topLevel.focusActiveTop > li.hiddenByFilter {
+  display: none;
+}
+
+.main_div.list_tag_kanbanize ul.topLevel > li.task {
+  flex: 0 1 500px;
+  margin: 0;
+  padding: 0 22px 0 0;
+  counter-reset: cardCount;
+}
+
+.main_div.list_tag_kanbanize ul.topLevel li.task > div.coreDiv {
+  margin-right: 22px;
+}
+
+.main_div.list_tag_kanbanize ul.topLevel > li.task > div.coreDiv {
+  margin-left: 24px;
+  margin-right: 64px !important;
+}
+
+.main_div.list_tag_kanbanize ul.topLevel > li.task > div.coreDiv > i.act {
+  right: 8px;
+}
+
+.main_div.list_tag_kanbanize ul.topLevel > li.task > div.coreDiv.tag_count {
+  margin-right: 94px !important;
+}
+
+.main_div.list_tag_kanbanize .tag.tag_count {
+  display: none;
+}
+
+.main_div.list_tag_kanbanize ul.topLevel > li.task.node_collapsed {
+  max-width: 34px;
+  min-width: 34px;
+  margin-left: 0;
+}
+
+.main_div.list_tag_kanbanize ul.topLevel > li.task.node_collapsed > div.coreDiv {
+  padding: 1px 3px;
+  margin: 0 !important;
+  border: 1px solid black;
+}
+
+.main_div.list_tag_kanbanize ul.topLevel > li.task.node_collapsed > div.coreDiv > div.nodeImage.node_collapsed {
+  opacity: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  transform: rotate(0deg);
+}
+
+.main_div.list_tag_kanbanize ul.topLevel > li.task.node_collapsed > div.coreDiv > span.editable {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  padding: 4px 2px;
+  display: inline-block;
+}
+
+.main_div.list_tag_kanbanize ul.topLevel > li.task.node_collapsed > div.coreDiv > i.act {
+  display: none;
+}
+
+.main_div.list_tag_kanbanize ul.topLevel > li.task.node_collapsed > ul {
+  display: none;
+}
+
+.main_div.list_tag_kanbanize ul.topLevel > li.task.node_collapsed .progressCounter {
+  display: none;
+}
+
+.main_div.list_tag_kanbanize ul.topLevel > li.task > div.coreDiv > div.nodeImage:after {
+  content: "\f33e";
+  font-family: var(--fa-family);
+  font-weight: var(--fa-weight);
+  font-size: var(--fa-size);
+  position: absolute;
+  top: 4px;
+  left: 2px;
+}
+
+.main_div.list_tag_kanbanize ul.topLevel > li.task > ul {
+  padding: 0 2px 0 24px;
+  overflow: hidden;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  height: calc(100vh - 168px) !important;
+  min-width: 300px;
+}
+
+.main_div.list_tag_kanbanize ul.topLevel > li.task > ul::-webkit-scrollbar {
+  width: 6px;
+  background: #eee;
+}
+
+.main_div.list_tag_kanbanize ul.topLevel > li.task > ul::-webkit-scrollbar-thumb {
+  width: 6px;
+  background: #ccc;
+}
+
+.main_div.list_tag_kanbanize ul.topLevel > li.task:not(.node_collapsed) > div.coreDiv.tag_count ~ ul::after {
+  position: absolute;
+  right: 24px;
+  top: 6px;
+  height: 17px;
+  min-width: 17px;
+  border: 1px solid black;
+  border-radius: 50%;
+  padding: 2px;
+  font-size: 0.7em;
+  line-height: 17px;
+  text-align: center;
+  content: counter(cardCount);
+}
+
+.main_div.list_tag_kanbanize ul.topLevel > li.task > ul > li.task {
+  margin: 0 0 2px 0;
+  box-shadow: 1px 2px 2px rgba(0, 0, 0, 0.1), -1px 2px 2px rgba(0, 0, 0, 0.1);
+  counter-increment: cardCount;
+}
+
+.main_div.list_tag_kanbanize ul.topLevel > li.task > ul > li.selectedTask {
+  background-color: rgb(246, 251, 255);
+}
+
+.main_div.list_tag_kanbanize ul.topLevel > li.task > ul > li.task > div.coreDiv {
+  margin: 0;
+  padding-right: 22px;
+  position: sticky;
+  top: 0px;
+  border: 1px solid black;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.1);
+  z-index: 19;
+}
+
+.main_div.list_tag_kanbanize ul.topLevel > li.task > ul > li.task > div.coreDiv > i.act {
+  right: 8px;
+}
+
+.main_div.list_tag_kanbanize ul.topLevel > li.task > ul > li:not(.selectedTask) > div.coreDiv:not(.selectedTask) {
+  background-color: rgb(244, 244, 244);
+}
+
+.main_div.list_tag_kanbanize ul.topLevel > li.task > ul > li.task > ul:empty {
+  display: none;
+}
+
+.main_div.list_tag_kanbanize ul.topLevel > li.task > ul > li.task > ul:not(:empty) {
+  border: 1px solid black;
+  border-top-color: white;
+}
+
+.main_div.list_tag_kanbanize .textareaWrapper {
+  flex: 1 1 200px;
+}
+
+.main_div.list_tag_kanbanize .textareaWrapper > textarea {
+  width: 100% !important;
+}
+
+.main_div.list_tag_kanbanize #tasks_block {
+  margin-bottom: 0;
+}
+
+.main_div.list_tag_kanbanize .progressCounter {
+  right: -64px;
+  flex-direction: row-reverse;
+}
+
+.main_div.list_tag_kanbanize .progressCounter > .progressCounter__estimate {
+  position: initial;
+  margin-right: 4px;
+}
+
+/* ======================================================================
+   SAFE DEFAULTS / RESTORE (wins)
+   ====================================================================== */
+
+img.logoImg {
+  width: 32px !important;
+  height: auto !important;
+}
+
+div.listNameNode h1 {
+  font-size: 20px !important;
+  font-weight: 600 !important;
+  margin: 0 0 10px 0 !important;
+  background: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  border: none !important;
+}
+
+div.header h1,
+div.header h2 {
+  background: none !important;
+  box-shadow: none !important;
+}
+
+ul.topLevel li.task,
+ul.topLevel ul li.task {
+  font-size: 14px !important;
+  line-height: 1.4 !important;
+  font-family: var(--cv-font) !important;
+  font-weight: 400 !important;
+  margin: 0 !important;
+  background: none !important;
+}
+
+.toolbarDiv,
+.toolBar {
+  height: 32px !important;
+  font-size: 13px !important;
+  line-height: 32px !important;
+}
+
+.userContent {
+  font-family: var(--cv-font) !important;
+  font-size: 14px;
+  line-height: 1.5;
+  font-weight: 400;
+  background: none !important;
+}
