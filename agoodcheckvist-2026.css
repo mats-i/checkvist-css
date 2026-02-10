@@ -138,22 +138,22 @@ b {
 
 .tag_projekt .userContent:before { content: "\f07b"; }
 
-.tag_p-pågår .userContent:before   { content: "\f058"; color: green; }
-.tag_p-möjligt .userContent:before { content: "\f058"; color: pink; }
+.tag_p-pågår .userContent:before   { content: "\f07b"; color: green; }
+.tag_p-möjligt .userContent:before { content: "\f07b"; color: pink; }
 
 .tag_p-ska-göras .userContent {
     font-weight: 600;
     /* Bolder text */
 }
 
-.tag_p-ska-göras .userContent:before { content: "\f058"; color: yellow; }
+.tag_p-ska-göras .userContent:before { content: "\f07b"; color: yellow; }
 
 .tag_p-avslutat .userContent {
     font-weight: 600;
     /* Bolder text */
 }
 
-.tag_p-avslutat .userContent:before { content: "\f058"; color: red; }
+.tag_p-avslutat .userContent:before { content: "\f07b"; color: red; }
 
 .tag_företag .userContent,
 .tag_person .userContent,
