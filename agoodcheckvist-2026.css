@@ -139,7 +139,7 @@ b {
 .tag_projekt .userContent:before { content: "\f07b"; }
 
 .tag_p-pågår .userContent:before   { content: "\f07b"; color: green; }
-.tag_p-möjligt .userContent:before { content: "\f07b"; color: pink; }
+.tag_p-möjligt .userContent:before { content: "\f07b"; color: orange; }
 
 .tag_p-ska-göras .userContent {
     font-weight: 600;
@@ -261,8 +261,8 @@ span.tag_p-avslutat {
 }
 
 span.tag_p-möjligt {
-    background-color: yellow;
-    color: #000;
+    background-color: transparent;
+    color: #999;
     border: none;
 }
 
