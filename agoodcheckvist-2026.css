@@ -26,7 +26,7 @@ span.contextUnder {
     width: 1.1em;
     margin-right: 5px;
     text-align: center;
-    font-family: "Font Awesome 5 Free";
+    font-family: var(--fa-family);
     font-size: 14px;
     font-weight: 900;
     content: none;
@@ -465,7 +465,7 @@ body {
 
 .main_div.list_tag_kanbanize ul.topLevel > li.task > div.coreDiv > div.nodeImage:after {
   content: "\f33e";
-  font-family: "Font Awesome 5 Free";
+  font-family: var(--fa-family);
   font-size: 14px;
   position: absolute;
   top: 4px;
