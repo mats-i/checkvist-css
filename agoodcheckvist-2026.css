@@ -138,29 +138,29 @@ b {
 
 .tag_projekt .userContent:before { content: "\f07b"; }
 
-.tag_projekt-pågår .userContent:before   { content: "\f058"; color: green; }
-.tag_projekt-möjligt .userContent:before { content: "\f058"; color: pink; }
+.tag_p-pågår .userContent:before   { content: "\f058"; color: green; }
+.tag_p-möjligt .userContent:before { content: "\f058"; color: pink; }
 
-.tag_projekt-ska-göras .userContent {
+.tag_p-ska-göras .userContent {
     font-weight: 600;
     /* Bolder text */
 }
 
-.tag_projekt-ska-göras .userContent:before { content: "\f058"; color: yellow; }
+.tag_p-ska-göras .userContent:before { content: "\f058"; color: yellow; }
 
-.tag_projekt-avslutat .userContent {
+.tag_p-avslutat .userContent {
     font-weight: 600;
     /* Bolder text */
 }
 
-.tag_projekt-avslutat .userContent:before { content: "\f058"; color: red; }
+.tag_p-avslutat .userContent:before { content: "\f058"; color: red; }
 
 .tag_företag .userContent,
 .tag_person .userContent,
 .tag_beslut .userContent,
 .tag_dokument .userContent,
-.tag_projekt-pågår .userContent,
-.tag_projekt-möjligt .userContent,
+.tag_p-pågår .userContent,
+.tag_p-möjligt .userContent,
 .tag_möte .userContent {
     font-size: 14px;
     font-weight: 600;
@@ -242,7 +242,7 @@ span.tag_möjlighet {
     border: none;
 }
 
-span.tag_ps-pågår {
+span.tag_p-pågår {
     background-color: green;
     color: #fff;
     border: none;
@@ -254,13 +254,13 @@ span.tag_öb {
     border: none;
 }
 
-span.tag_ps-avslutat {
+span.tag_p-avslutat {
     background-color: red;
     color: #fff;
     border: none;
 }
 
-span.tag_ps-möjligt {
+span.tag_p-möjligt {
     background-color: yellow;
     color: #000;
     border: none;
