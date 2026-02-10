@@ -153,7 +153,8 @@ b {
     /* Bolder text */
 }
 
-.tag_p-avslutat .userContent:before { content: "\f07b"; color: red; }
+.tag_p-avslutat .userContent:before  { content: "\f07b"; color: red; }
+.tag_p-blev-inget .userContent:before { content: "\f07b"; color: #ccc; }
 
 .tag_företag .userContent,
 .tag_person .userContent,
