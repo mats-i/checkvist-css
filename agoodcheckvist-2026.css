@@ -243,46 +243,63 @@ a.tagClass_0 {
    - Taggchip + (valfri) ikon före raden
    ====================================================================== */
 
-/* Chip for the tag itself */
-span.tag_todo,
-a.tag_todo {
-  background: #eef6ff;
-  color: #245b9a;
-  border: 1px solid #cfe5ff;
-  border-radius: var(--chip-radius);
-  padding: var(--chip-pad-y) var(--chip-pad-x);
+
+   /* ==========================================================
+   #todo – chip (Open)
+   Selector enligt din DOM: span.afterTask.tag.tag_todo.tagClass_0
+   ========================================================== */
+
+span.afterTask.tag.tag_todo,
+a.afterTask.tag.tag_todo {
+  background: #f3f8ff;          /* svagt fylld */
+  border: 1px solid #d6e8ff;
+  color: #1f4f88;
+  border-radius: 999px;
+  padding: 0 6px;
   font-weight: 700;
+  font-size: 12px;
+  line-height: 16px;
+  vertical-align: baseline;
 }
 
-/* Optional: show an icon at start of todo lines (even if tag chip is hidden later) */
-.tag_todo .userContent:before {
-  content: "\f0ae"; /* tasks */
-  color: #245b9a;
+/* Hover (känns mer “chip”, mindre “knapp”) */
+span.afterTask.tag.tag_todo:hover {
+  background: #eaf3ff;
+  border-color: #c7defc;
 }
 
-/* If a task is done (status via Cmd+Enter), tone down todo chip */
-li.task.task_done span.tag_todo,
-li.task.status_done span.tag_todo,
-li.task.node_done span.tag_todo {
+/* ==========================================================
+   DONE/CLOSED – tona ned chipet
+   Done state enligt din DOM: .coreDiv.task_closed och .userContent.task_closed
+   ========================================================== */
+
+.coreDiv.task_closed span.afterTask.tag.tag_todo,
+.coreDiv.task_closed a.afterTask.tag.tag_todo {
   background: transparent;
   border-color: transparent;
-  color: var(--cv-muted);
+  color: #b0b0b0;
+  font-weight: 600;
 }
 
-/* If done, make the icon neutral too */
-li.task.task_done.tag_todo .userContent:before,
-li.task.status_done.tag_todo .userContent:before,
-li.task.node_done.tag_todo .userContent:before {
-  color: var(--cv-muted);
+/* Extra: om du vill att chipet blir “litet” i done */
+.coreDiv.task_closed span.afterTask.tag.tag_todo {
+  padding: 0 4px;
+  font-size: 11px;
 }
 
-/* Done state – general readability (selector names can vary; keep broad) */
-li.task.task_done .userContent,
-li.task.status_done .userContent,
-li.task.node_done .userContent {
-  opacity: 0.6;
+/* ==========================================================
+   DONE/CLOSED – valfri toning av själva texten (om du vill förstärka)
+   Din DOM: span.userContent.task_closed
+   ========================================================== */
+
+/* Avkommentera om du vill att stängda todos blir tydligare “klara” */
+/*
+span.userContent.task_closed {
+  opacity: 0.65;
   text-decoration: line-through;
 }
+*/
+
 
 /* ======================================================================
    PROJEKTSTATUS: #p-pågår / #p-möjligt / #p-avslutat
